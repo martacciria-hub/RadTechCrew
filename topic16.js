@@ -1,5 +1,5 @@
 // TEMA 16. OTROS FÁRMACOS EN RADIOLOGÍA Y CARRO DE PAROS
-const topic16 = `TEMA 16. OTROS FÁRMACOS EN RADIOLOGÍA Y CARRO DE PAROS
+const topic16Content = `TEMA 16. OTROS FÁRMACOS EN RADIOLOGÍA Y CARRO DE PAROS
 
 CARRO DE PAROS (DOTACIÓN BÁSICA)
 
@@ -57,6 +57,32 @@ También permite una mejor visualización de los cambios precoces de los conduct
 
 ⟶ Laxantes: Para eliminar restos fecales y conseguir ver correctamente las paredes intestinales en estudios baritados y TAC colonoscópicos, también podemos ver las estructuras adyacentes como en la urografía intravenosa.`;
 
-if (typeof topics !== 'undefined') {
-  topics[16] = { title: 'TEMA 16. OTROS FÁRMACOS EN RADIOLOGÍA Y CARRO DE PAROS', content: topic16 };
+function renderTopic16() {
+  const view = document.getElementById('module-view');
+  const content = view && view.querySelector('.module-topics');
+  if (!content) return;
+  content.innerHTML = `<button class="secondary-button topic-back" type="button">← Volver a temas</button><article class="study-material"><div class="topic-heading"><p class="eyebrow">MATERIAL DE ESTUDIO</p><h2>TEMA 16. OTROS FÁRMACOS EN RADIOLOGÍA Y CARRO DE PAROS</h2></div><div class="topic-content">${topic16Content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br>').replace(/^/,'<p>').replace(/$/,'</p>')}</div></article>`;
+  content.querySelector('.topic-back').addEventListener('click', () => { const module3 = document.querySelector('.module-card[data-module="3"]'); if (module3) module3.click(); });
+  view.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+function addTopic16Card() {
+  const module3 = document.querySelector('.module-card[data-module="3"]');
+  if (!module3 || module3.dataset.topic16Ready === '1') return;
+  module3.dataset.topic16Ready = '1';
+  module3.addEventListener('click', () => {
+    setTimeout(() => {
+      const list = document.querySelector('.module-topics .topic-list');
+      if (!list || list.querySelector('[data-topic="16"]')) return;
+      const card = document.createElement('button');
+      card.className = 'topic-card';
+      card.type = 'button';
+      card.dataset.topic = '16';
+      card.innerHTML = `<span class="module-number">TEMA 16</span><h3>TEMA 16. OTROS FÁRMACOS EN RADIOLOGÍA Y CARRO DE PAROS</h3><span class="module-action">Abrir material →</span>`;
+      card.addEventListener('click', renderTopic16);
+      list.appendChild(card);
+    }, 0);
+  });
+}
+
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addTopic16Card); else addTopic16Card();
