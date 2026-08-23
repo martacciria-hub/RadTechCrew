@@ -103,3 +103,17 @@ Gadolinio intravenoso (doble contraste)`;
 if (typeof topics !== 'undefined') {
   topics[15] = { title: 'TEMA 15. CONTRASTES EN RESONANCIA MAGNÉTICA', content: topic15 };
 }
+
+// El listado de temas del Módulo 3 se amplía aquí para no modificar la estructura estable de app.js.
+const previousRenderModuleTopics = renderModuleTopics;
+renderModuleTopics = function(moduleNumber) {
+  if (moduleNumber !== 3) return previousRenderModuleTopics(moduleNumber);
+  const moduleTopics = [12, 13, 14, 15];
+  return `<div class="topic-list">${moduleTopics.map(topicNumber => `
+    <button class="topic-card" type="button" data-topic="${topicNumber}">
+      <span class="module-number">TEMA ${topicNumber}</span>
+      <h3>${topics[topicNumber].title}</h3>
+      <span class="module-action">Abrir material →</span>
+    </button>
+  `).join('')}</div>`;
+};
