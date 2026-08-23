@@ -1,24 +1,33 @@
-// TEMA 11 — SISTEMAS DE INFORMACIÓN EN RADIOLOGÍA (RIS, PACS)
-const topic11 = `
-<h2>TEMA 11. SISTEMAS DE INFORMACIÓN EN RADIOLOGÍA (RIS, PACS) Y SU COMUNICACIÓN CON EL RESTO DE SISTEMAS DE INFORMACIÓN SANITARIOS.</h2>
+topics[11]={title:'TEMA 11. SISTEMAS DE INFORMACIÓN EN RADIOLOGÍA (RIS, PACS) Y SU COMUNICACIÓN CON EL RESTO DE SISTEMAS DE INFORMACIÓN SANITARIOS.',content:`TEMA 11. SISTEMAS DE INFORMACIÓN EN RADIOLOGÍA (RIS, PACS) Y SU COMUNICACIÓN CON EL RESTO DE SISTEMAS DE INFORMACIÓN SANITARIOS.
 
-<h3>DEPARTAMENTO DE RADIOLOGÍA DIGITAL</h3>
-<p>Se basa en las imágenes digitales generadas por cualquier modalidad tanto de radiología simple como TAC, Reso, MN y modalidades de fusión, trabaja con PACS para Archivar/ Ver/ Manipular y Comunicar. La gestión de RIS es Agendar/Citar/Registrar procesos/Soporte al proceso informado y Gestión de materiales.</p>
+DEPARTAMENTO DE RADIOLOGÍA DIGITAL
 
-<h3>PACS</h3>
-<p>Los principales componentes son:</p>
-<p>⟶ Servidor central</p>
-<p>⟶ Sistema de archivo (corto, medio y largo plazo)</p>
-<p>⟶ Modalidades que generan imágenes</p>
-<p>⟶ Estaciones de diagnóstico y revisión</p>
-<p>⟶ Red de transmisión de datos.</p>
+Se basa en las imágenes digitales generadas por cualquier modalidad tanto de radiología simple como TAC, Reso, MN y modalidades de fusión, trabaja con PACS para Archivar/ Ver/ Manipular y Comunicar. La gestión de RIS es Agendar/Citar/Registrar procesos/Soporte al proceso informado y Gestión de materiales.
 
-<h3>RIS</h3>
-<p>Gestiona toda la actividad del sistema de radiología, tanto de forma asistencial como administrativa y de gestión.</p>
-<p>Debe ser: Completo/ Personalizado/ Robusto/ Flexible e integrado.</p>
-`;
+PACS
 
-// Registro para el visor de temas
-if (typeof topics !== 'undefined') {
-  topics[11] = topic11;
-}
+Los principales componentes son:
+
+⟶ Servidor central
+
+⟶ Sistema de archivo (corto, medio y largo plazo)
+
+⟶ Modalidades que generan imágenes
+
+⟶ Estaciones de diagnóstico y revisión
+
+⟶ Red de transmisión de datos.
+
+RIS
+
+Gestiona toda la actividad del sistema de radiología, tanto de forma asistencial como administrativa y de gestión.
+
+Debe ser: Completo/ Personalizado/ Robusto/ Flexible e integrado.`};
+
+const previousRenderModuleTopics11=renderModuleTopics;
+renderModuleTopics=function(moduleNumber){
+  const result=previousRenderModuleTopics11(moduleNumber);
+  if(moduleNumber!==2)return result;
+  const moduleTopics=[6,7,8,9,10,11];
+  return `<div class="topic-list">${moduleTopics.map(topicNumber=>`<button class="topic-card" type="button" data-topic="${topicNumber}"><span class="module-number">TEMA ${topicNumber}</span><h3>${topics[topicNumber].title}</h3><span class="module-action">Abrir material →</span></button>`).join('')}</div>`;
+};
