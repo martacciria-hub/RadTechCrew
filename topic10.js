@@ -12,3 +12,11 @@ window.RADTECH_TOPIC_10 = {
 <p>⟶ Gestión del cambio (Instalación y adecuación de los sistemas informáticos y el hardware asociado/ Introducción de datos maestros/ Plan de comunicación y formación/ Asegurarse del correcto funcionamiento de los sistemas.)</p>
 <p>⟶ Evaluación y mejoras continuas</p>`
 };
+
+const previousRenderModuleTopics10 = renderModuleTopics;
+renderModuleTopics = function(moduleNumber) {
+  const result = previousRenderModuleTopics10(moduleNumber);
+  if (moduleNumber !== 3) return result;
+  const moduleTopics = [10];
+  return `<div class="topic-list">${moduleTopics.map(topicNumber => `<button class="topic-card" type="button" data-topic="${topicNumber}"><span class="module-number">TEMA ${topicNumber}</span><h3>${window.RADTECH_TOPIC_10.title}</h3><span class="module-action">Abrir material →</span></button>`).join('')}</div>`;
+};
