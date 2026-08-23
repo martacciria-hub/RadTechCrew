@@ -25,7 +25,7 @@ PROCESO RADIOLÓGICO
 const previousRenderModuleTopics10=renderModuleTopics;
 renderModuleTopics=function(moduleNumber){
   const result=previousRenderModuleTopics10(moduleNumber);
-  if(moduleNumber!==3)return result;
-  const moduleTopics=[10];
+  if(moduleNumber!==2)return result;
+  const moduleTopics=[6,7,8,9,10];
   return `<div class="topic-list">${moduleTopics.map(topicNumber=>`<button class="topic-card" type="button" data-topic="${topicNumber}"><span class="module-number">TEMA ${topicNumber}</span><h3>${topics[topicNumber].title}</h3><span class="module-action">Abrir material →</span></button>`).join('')}</div>`;
 };
