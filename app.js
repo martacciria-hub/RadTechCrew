@@ -1,8 +1,15 @@
 const modules = [
-  { n: 1, title: 'Módulo 1 · Radiología Convencional', desc: 'Temas 1–5' },
-  { n: 2, title: 'Módulo 2 · Radiología Digital', desc: 'Temas 6–11' },
-  { n: 3, title: 'Módulo 3 · Fármacos y Medios de Contraste', desc: 'Temas 12–17' },
-  { n: 4, title: 'Módulo 4 · Técnicas de Radiología Convencional', desc: 'Temas 18–34' }
+  { n: 1, title: 'Radiología convencional: Las bases del procedimiento radiológico.', desc: 'Temas de estudio del módulo' },
+  { n: 2, title: 'Radiología digital.', desc: 'Temas de estudio del módulo' },
+  { n: 3, title: 'Fármacos en radiología.', desc: 'Temas de estudio del módulo' },
+  { n: 4, title: 'Técnicas de radiología convencional.', desc: 'Temas de estudio del módulo' },
+  { n: 5, title: 'Ecografía.', desc: 'Temas de estudio del módulo' },
+  { n: 6, title: 'Tomografía computarizada.', desc: 'Temas de estudio del módulo' },
+  { n: 7, title: 'Resonancia magnética.', desc: 'Temas de estudio del módulo' },
+  { n: 8, title: 'Radiología vascular e intervencionista.', desc: 'Temas de estudio del módulo' },
+  { n: 9, title: 'Medicina nuclear.', desc: 'Temas de estudio del módulo' },
+  { n: 10, title: 'Protección radiológica.', desc: 'Temas de estudio del módulo' },
+  { n: 11, title: 'Funciones del técnico.', desc: 'Temas de estudio del módulo' }
 ];
 
 const modulesContainer = document.getElementById('modules');
@@ -22,8 +29,8 @@ modulesContainer.innerHTML = modules.map(m => `
 document.querySelectorAll('.module-card').forEach(card => {
   card.addEventListener('click', () => {
     const module = modules.find(m => m.n === Number(card.dataset.module));
-    moduleViewTitle.textContent = module.title;
-    moduleViewDesc.textContent = `${module.desc}. Aquí incorporaremos los temas de estudio del módulo, sin tests dentro del módulo.`;
+    moduleViewTitle.textContent = `Módulo ${module.n} · ${module.title}`;
+    moduleViewDesc.textContent = 'Aquí incorporaremos los temas de estudio del módulo, sin tests dentro del módulo.';
     moduleView.hidden = false;
     moduleView.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
