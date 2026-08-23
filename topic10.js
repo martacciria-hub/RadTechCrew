@@ -1,4 +1,4 @@
-window.RADTECH_TOPIC_10 = {
+topics[10] = {
   title: "TEMA 10. INTEGRACIÓN DE LA IMAGEN DIGITAL EN EL PROCESO RADIOLÓGICO",
   content: `<h3>DEFINICIÓN</h3>
 <p>Son una serie de actividades estructuradas que permiten obtener información con un valor añadido y así mejorar la atención al paciente.</p>
@@ -18,5 +18,5 @@ renderModuleTopics = function(moduleNumber) {
   const result = previousRenderModuleTopics10(moduleNumber);
   if (moduleNumber !== 3) return result;
   const moduleTopics = [10];
-  return `<div class="topic-list">${moduleTopics.map(topicNumber => `<button class="topic-card" type="button" data-topic="${topicNumber}"><span class="module-number">TEMA ${topicNumber}</span><h3>${window.RADTECH_TOPIC_10.title}</h3><span class="module-action">Abrir material →</span></button>`).join('')}</div>`;
+  return `<div class="topic-list">${moduleTopics.map(topicNumber => `<button class="topic-card" type="button" data-topic="${topicNumber}"><span class="module-number">TEMA ${topicNumber}</span><h3>${topics[topicNumber].title}</h3><span class="module-action">Abrir material →</span></button>`).join('')}</div>`;
 };
