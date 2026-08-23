@@ -9,7 +9,7 @@
 <body>
 <header class="topbar">
   <div class="brand">🩻 <span>RadTechCrew</span></div>
-  <nav>
+  <nav aria-label="Navegación principal">
     <a href="#inicio">Inicio</a>
     <a href="#perfil">Perfil</a>
     <a href="#estudio">Zona de estudio</a>
@@ -23,10 +23,34 @@
   <h1>Bienvenida a <span>RadTechCrew</span></h1>
   <p>Tu espacio para estudiar, entrenar y preparar las oposiciones de una forma clara, visual y sin distracciones.</p>
 </section>
-<section id="perfil" class="panel"><h2>👤 Perfil</h2><p>Aquí irá tu perfil y personalización.</p></section>
-<section id="estudio" class="panel"><h2>📚 Zona de estudio</h2><p>Los módulos aparecerán aquí. <strong>Los tests no estarán dentro de los módulos.</strong></p><div id="modules" class="cards"></div></section>
-<section id="tests" class="panel"><h2>📝 Tests</h2><p>Aquí aparecerán únicamente los tests que creemos nosotras.</p></section>
-<section id="examenes" class="panel"><h2>🏥 Exámenes reales ICS</h2><p>Aquí reuniremos los exámenes reales cuando empecemos esa parte.</p></section>
+<section id="perfil" class="panel">
+  <h2>👤 Perfil</h2>
+  <p>Aquí irá tu perfil y personalización.</p>
+</section>
+<section id="estudio" class="panel">
+  <h2>📚 Zona de estudio</h2>
+  <p>Elige un módulo para entrar en sus temas de estudio. Los tests están fuera de los módulos.</p>
+  <div id="modules" class="cards"></div>
+</section>
+<section id="module-view" class="panel module-view" hidden>
+  <div class="module-view-head">
+    <div>
+      <p class="eyebrow">ZONA DE ESTUDIO</p>
+      <h2 id="module-view-title"></h2>
+      <p id="module-view-desc"></p>
+    </div>
+    <button id="close-module" class="secondary-button" type="button">Cerrar</button>
+  </div>
+  <div class="coming-soon">📚 Los temas de este módulo se incorporarán aquí.</div>
+</section>
+<section id="tests" class="panel">
+  <h2>📝 Tests</h2>
+  <p>Aquí aparecerán únicamente los tests que creemos nosotras.</p>
+</section>
+<section id="examenes" class="panel">
+  <h2>🏥 Exámenes reales ICS</h2>
+  <p>Esta sección es independiente de Tests. Aquí reuniremos los exámenes reales cuando empecemos esa parte.</p>
+</section>
 </main>
 <script src="app.js"></script>
 </body>
