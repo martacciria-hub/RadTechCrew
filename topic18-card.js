@@ -1,9 +1,9 @@
-// Integración visual del Tema 18 en el Módulo 3
+// Integración visual del Tema 18 en el Módulo 4
 function addTopic18Card() {
-  const module3 = document.querySelector('.module-card[data-module="3"]');
-  if (!module3 || module3.dataset.topic18Ready === '1') return;
-  module3.dataset.topic18Ready = '1';
-  module3.addEventListener('click', () => {
+  const module4 = document.querySelector('.module-card[data-module="4"]');
+  if (!module4 || module4.dataset.topic18Ready === '1') return;
+  module4.dataset.topic18Ready = '1';
+  module4.addEventListener('click', () => {
     setTimeout(() => {
       const list = document.querySelector('.module-topics .topic-list');
       if (!list || list.querySelector('[data-topic="18"]')) return;
@@ -18,7 +18,7 @@ function addTopic18Card() {
         const content = view && view.querySelector('.module-topics');
         if (!topic || !content) return;
         content.innerHTML = `<button class="secondary-button topic-back" type="button">← Volver a temas</button><article class="study-material"><div class="topic-heading"><p class="eyebrow">MATERIAL DE ESTUDIO</p><h2>${topic.title}</h2></div><div class="topic-content">${formatStudyText(topic.content)}</div></article>`;
-        content.querySelector('.topic-back').addEventListener('click', () => module3.click());
+        content.querySelector('.topic-back').addEventListener('click', () => module4.click());
         view.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
       list.appendChild(card);
