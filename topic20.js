@@ -1,25 +1,25 @@
-// TEMA 20. RADIOLOGÍA CONVENCIONAL DE PELVIS Y ART. CADERA
-const topic20Content = `TEMA 20. RADIOLOGÍA CONVENCIONAL DE PELVIS Y ART. CADERA
+// TEMA 20. RADIOLOGÍA CONVECIONAL DE PELVIS Y ART. CADERA
+const topic20Content = `TEMA 20. RADIOLOGÍA CONVECIONAL DE PELVIS Y ART. CADERA
 
 PROYECCIÓN AP PELVIS DECÚBITO
 
 PROYECCIÓN AP PELVIS BIPEDESTACIÓN
 
-Cuando es necesario valorar asimetrías en EEII.
+Cuando es necesario valorar asimetrías en EEII
 
-Básica en cualquier estudio de pelvis.
+Básica en cualquier estudio de pelvis
 
-PROYECCIÓN CRANEОCAUDAL INLET
+PROYECCIÓN craneocaudal INLET
 
-PROYECCIÓN CAUDOCRANEAL OUTLET
+PROYECCIÓN caudocraneal OUTLET
 
-Permite valorar la parte superior del anillo pélvico en traumatismos, y las diáfisis articulares.
+Permite valorar la parte superior del anillo pélvico en traumatismos, y las diáfisis articulares
 
-Permite valorar la parte inferior y anterior del anillo pélvico (ramas iliopubianas, isquiopubianas y sínfisis del pubis).
+Permite valorar la parte inferior y anterior del anillo pélvico (ramas iliopubianas, isquipubianas y sínfisis del pubis)
 
 PROYECCIÓN OBLICUA POST. “ALAR”
 
-Permite valorar fracturas de acetábulos, y luxaciones de cadera en pacientes traumáticos.
+Permite valorar fracturas de acetábulos, y luexaciones de cadera en pacientes traumáticos
 
 PROYECCIÓN OBLICUA POST. “OBTURATRIZ”
 
@@ -27,31 +27,29 @@ Permite valorar mejor la zona del acetábulo y las ramas del pubis.
 
 PROYECCIÓN OBLICUA AMBAS HEMIPELVIS
 
-Se hace igual que la AP de pelvis, solo se modifica el centrage que se hace a la altura de los cuellos femorales. La “unilateral” se emplea para el post IQ o por seguimiento de algún proceso.
+Se hace igual que la AP de pelvis, solo se modifica el centrage que se hace a la altura de los cuellos femorales. La “unilateral” se emplea para el post IQ o por seguimiento de algún proceso
 
 PROYECCIÓN AP BILATERAL CADERA (bipe)
 
-PROYECCIÓN AP BILATERAL CADERA
+PROYECCIÓN AP BILATERAL CADERA  PROYECCIÓN AXIAL BILATERAL (ANCAS DE RANA)
 
-PROYECCIÓN AXIAL BILATERAL (ANCAS DE RANA)
-
-Esta proyección complementa la AP de cadera, cuando no hay fx.
+Esta proyección complementa la AP de cadera, cuando no hay fx
 
 PROYECCIÓN AXIAL QUIRÚRGICA (CROSS-TABLE)
 
-Esta proyección complementa la AP de cadera, cuando el paciente no puede mover la articulación, debido a traumatismos o cirugía. Y para el estudio de las caderas con choque femoroacetabular.
+Esta proyección complementa la AP de cadera, cuando el paciente no puede mover la articulación, debido a traumatismos o cirugía. Y para el estudio de las caferas con choque femoroacetabular.
 
 PROYECCIÓN AXIAL UNILATERAL decúbito y bipe
 
 PROYECCIÓN AXIAL DE DUNN Y DUNN MODIFICADA
 
-Permite valorar la esferidad de la cabeza femoral en estudios de pacientes jóvenes con dolor, o sospecha de choque femoroacetabular.
+Permite valorar la esferidad de la cabeza femoral en estudios de pacientes jovenes con dolor, o sospecha de choque femoroacetabular.
 
-Dunn modificada.
+Dunn  modificada
 
 PROYECCIÓN LATERAL MODIFICADA
 
-Esta proyección sustituye la Cross-table, cuando el paciente no se puede mover por traumatismo, cirugía, etc.
+Esta proyección sustituye la Cross-table, cuando el paciente no se puede mover por traumatismo, cirugia, etc.
 
 PROYECCIÓN FALSO PERFIL
 
@@ -59,18 +57,18 @@ Permite valorar la esferidad de la cabeza femoral en estudios de choque femoroac
 
 PROYECCIONES ART. SACROILÍACAS
 
-Tienen una doble angulación, que es importante para entender las proyecciones, una siguiendo el eje del sacro y la otra hacia posteromedial. Las proyecciones básicas incluyen la proyección axial de ambas art. y la proyección oblicua de cada una de ellas. Las proyecciones de las art. sacroilíacas se suelen pedir cuando el paciente refiere dolor o patología inflamatoria.
+Tienen una doble angulación , que es importante para entender las proyecciones, una siguiendo el eje del sacro y la otra hacia posteromedial.  Las proyecciones básicas incluyen la proyección axial de ambas art. y la proyección oblicua de cada una de ellas. Las proyecciones de las art. sacroilíacas se suelen pedir cuando el paciente refiere dolor o patología inflamatoria
 
-PROYECCIÓN AXIAL ART. SACROILÍACAS
+PROYECCIÓN  AXIAL ART. SACROILÍACAS
 
-PROYECCIÓN OBLICUA DE ART. SACROILÍACA
+PROYECCIÓN  OBLICUA DE ART. SACROILÍACA
 
-Es la proyección que más se utiliza, principalmente cuando se hacen controles, ya que con una única RX, se tiene la imagen de ambas art. con menor irradiación.
+Es la proyección que más se utiliza, principalmente cuando se hacen controles, ya que con una única RX, se tiene la imagen de ambas art. con menor irradiación
 
-Con ella podemos ver más definido el espacio articular.`;
+Con ella podemos ver más definido el espacio articular`;
 
 if (typeof topics !== 'undefined') {
-  topics[20] = { title: 'TEMA 20. RADIOLOGÍA CONVENCIONAL DE PELVIS Y ART. CADERA', content: topic20Content };
+  topics[20] = { title: 'TEMA 20. RADIOLOGÍA CONVECIONAL DE PELVIS Y ART. CADERA', content: topic20Content };
 }
 
 function renderTopic20() {
@@ -101,7 +99,7 @@ function addTopic20Card() {
       card.className = 'topic-card';
       card.type = 'button';
       card.dataset.topic = '20';
-      card.innerHTML = `<span class="module-number">TEMA 20</span><h3>TEMA 20. RADIOLOGÍA CONVENCIONAL DE PELVIS Y ART. CADERA</h3><span class="module-action">Abrir material →</span>`;
+      card.innerHTML = `<span class="module-number">TEMA 20</span><h3>TEMA 20. RADIOLOGÍA CONVECIONAL DE PELVIS Y ART. CADERA</h3><span class="module-action">Abrir material →</span>`;
       card.addEventListener('click', renderTopic20);
       list.appendChild(card);
     }, 0);
