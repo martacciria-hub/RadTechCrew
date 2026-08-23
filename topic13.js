@@ -126,3 +126,22 @@ Pueden variar la vía de administración, la velocidad y el tiempo de inyección
 if (typeof topics !== 'undefined') {
   topics[13] = { title: 'TEMA 13. CONTRASTES RADIOGRÁFICOS', content: topic13 };
 }
+
+// Integra el Tema 13 en el Módulo 3 sin tocar la navegación de los módulos anteriores.
+if (typeof renderModuleTopics === 'function') {
+  const previousRenderModuleTopics = renderModuleTopics;
+  renderModuleTopics = function(moduleNumber) {
+    if (moduleNumber === 3) {
+      const moduleTopics = [12, 13].filter(topicNumber => topics[topicNumber]);
+      if (!moduleTopics.length) return '<div class="coming-soon">📚 Los temas de este módulo se incorporarán aquí.</div>';
+      return `<div class="topic-list">${moduleTopics.map(topicNumber => `
+        <button class="topic-card" type="button" data-topic="${topicNumber}">
+          <span class="module-number">TEMA ${topicNumber}</span>
+          <h3>${topics[topicNumber].title}</h3>
+          <span class="module-action">Abrir material →</span>
+        </button>
+      `).join('')}</div>`;
+    }
+    return previousRenderModuleTopics(moduleNumber);
+  };
+}
