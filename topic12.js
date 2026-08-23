@@ -62,3 +62,11 @@ A TRAVÉS DE OTROS CONDUCTOS
 if (typeof topics !== 'undefined') {
   topics[12] = { title: 'TEMA 12. VÍAS DE ADMINISTRACIÓN DE CONTRASTE', content: topic12 };
 }
+
+const previousRenderModuleTopics12 = renderModuleTopics;
+renderModuleTopics = function(moduleNumber){
+  const result = previousRenderModuleTopics12(moduleNumber);
+  if(moduleNumber!==3) return result;
+  const moduleTopics=[12];
+  return `<div class="topic-list">${moduleTopics.map(topicNumber=>`<button class="topic-card" type="button" data-topic="${topicNumber}"><span class="module-number">TEMA ${topicNumber}</span><h3>${topics[topicNumber].title}</h3><span class="module-action">Abrir material →</span></button>`).join('')}</div>`;
+};
