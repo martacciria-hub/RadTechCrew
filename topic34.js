@@ -146,7 +146,7 @@ function addTopic34Card() {
   if (!module4) return;
   module4.addEventListener('click', () => {
     setTimeout(() => {
-      const content = document.getElementById('module-topics');
+      const content = document.querySelector('#module-view .module-topics');
       if (!content) return;
       let list = content.querySelector('.topic-list');
       if (!list) {
@@ -166,14 +166,8 @@ function addTopic34Card() {
   });
 }
 
-function startTopic34Integration() {
-  addTopic34Card();
-  const observer = new MutationObserver(() => addTopic34Card());
-  observer.observe(document.body, { childList: true, subtree: true });
-}
-
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startTopic34Integration);
+  document.addEventListener('DOMContentLoaded', addTopic34Card);
 } else {
-  startTopic34Integration();
+  addTopic34Card();
 }
