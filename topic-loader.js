@@ -1,7 +1,10 @@
 // CARGADOR DE TEMAS DE RADTECHCREW
-// Se ejecuta después de cargar los archivos topicXX.js.
+// Módulo 4: temas 18-34. Módulo 5: temas 35-39.
 (function () {
-  const topicNumbers = [18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
+  const moduleTopics = {
+    4: [18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34],
+    5: [35, 36, 37, 38, 39]
+  };
 
   function getTopicContent(n) {
     try {
@@ -11,23 +14,31 @@
     }
   }
 
+  function getModuleNumber(titleText) {
+    const title = titleText.trim().toLowerCase();
+    if (title.includes('técnicas de radiología convencional')) return 4;
+    if (title.includes('ecografía')) return 5;
+    return null;
+  }
+
   function renderTopics() {
     const title = document.getElementById('module-view-title');
     const container = document.getElementById('module-topics');
     if (!title || !container) return;
 
-    const isModule4 = title.textContent.trim().toLowerCase().includes('técnicas de radiología convencional');
-    if (!isModule4) return;
+    const moduleNumber = getModuleNumber(title.textContent);
+    if (!moduleNumber) return;
 
     container.innerHTML = '';
 
-    topicNumbers.forEach((n) => {
+    (moduleTopics[moduleNumber] || []).forEach((n) => {
       const content = getTopicContent(n);
       if (!content) return;
 
       const card = document.createElement('button');
       card.type = 'button';
       card.className = 'topic-card';
+      card.dataset.topic = String(n);
       card.innerHTML = `<strong>TEMA ${n}</strong><span>Ver tema completo</span>`;
 
       card.addEventListener('click', () => {
