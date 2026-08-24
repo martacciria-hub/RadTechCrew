@@ -143,9 +143,14 @@ function renderTopic34() {
 
 function addTopic34Card() {
   const content = document.getElementById('module-topics');
-  if (!content) return;
-  const list = content.querySelector('.topic-list');
-  if (!list || list.querySelector('[data-topic="34"]')) return;
+  if (!content) return false;
+  let list = content.querySelector('.topic-list');
+  if (!list) {
+    list = document.createElement('div');
+    list.className = 'topic-list';
+    content.appendChild(list);
+  }
+  if (list.querySelector('[data-topic="34"]')) return true;
   const card = document.createElement('button');
   card.className = 'topic-card';
   card.type = 'button';
@@ -153,14 +158,24 @@ function addTopic34Card() {
   card.innerHTML = `<span class="module-number">TEMA 34</span><h3>TEMA 34. RADIOLOGÍA CONVENCIONAL. DENSITOMETRÍA</h3><span class="module-action">Abrir material →</span>`;
   card.addEventListener('click', renderTopic34);
   list.appendChild(card);
+  return true;
 }
 
 function startTopic34Integration() {
+  const ensure = () => addTopic34Card();
+  ensure();
+  document.addEventListener('click', (event) => {
+    const module4 = event.target.closest && event.target.closest('.module-card[data-module="4"]');
+    if (module4) setTimeout(ensure, 20);
+  });
   const content = document.getElementById('module-topics');
-  if (!content) return;
-  addTopic34Card();
-  const observer = new MutationObserver(() => addTopic34Card());
-  observer.observe(content, { childList: true, subtree: true });
+  if (content) {
+    const observer = new MutationObserver(ensure);
+    observer.observe(content, { childList: true, subtree: true });
+  }
+  setTimeout(ensure, 100);
+  setTimeout(ensure, 500);
+  setTimeout(ensure, 1000);
 }
 
 if (document.readyState === 'loading') {
