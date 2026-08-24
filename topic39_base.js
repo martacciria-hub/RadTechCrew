@@ -1,0 +1,20 @@
+// Tema 39 — Exploración ecográfica del aparato genital masculino
+// Archivo base independiente. En esta fase NO se conecta todavía al Módulo 5.
+
+window.TOPIC39_BASE = {
+  id: 39,
+  title: 'TEMA 39. EXPLORACIÓN ECOGRÁFICA DEL APARATO GENITAL MASCULINO',
+  module: 5,
+  sections: [
+    { title: 'TESTÍCULO', subsections: [
+      { title: 'INTRODUCCIÓN, ANATOMÍA Y FUNCIONES', content: 'La ecografía es la técnica de elección para el estudio de la patología escrotal. Aporta gran resolución espacial y alta sensibilidad para identificar lesiones tanto intra como extratesticulares.' },
+      { title: 'ESCROTO', content: 'Saco formado por un conjunto de envolturas dividido en dos por un rafe tendinoso. Cada saco (hemiescroto) contiene un testículo con el epidídimo y el cordón espermático.\n\nLas capas que forman la pared del escroto, desde la superficie hasta los planos profundos, son 7:\n→ Piel.\n→ Músculo dartos.\n→ Capa celular subcutánea.\n→ Fascia espermática externa.\n→ Músculo cremáster.\n→ Fascia espermática interna.\n→ Túnica vaginal: membrana serosa con dos capas (visceral y parietal) derivadas del proceso vaginal del peritoneo. Entre ellas existe un espacio virtual. Recubre el testículo y el epidídimo por fuera de la albugínea, salvo en la parte posterior, en la unión del testículo y el epidídimo.' },
+      { title: 'CONTENIDO DEL ESCROTO', content: 'TESTÍCULO\n\nGlándulas ovaladas y simétricas alojadas en el escroto. Son las gónadas masculinas y su función es la producción de espermatozoides y hormonas sexuales masculinas.\n\nLa túnica albugínea es la capa fibrosa que envuelve el testículo. Emite numerosos septos desde su cara interna que convergen en la parte posterior, donde se pliega hacia el interior formando un septo incompleto llamado MEDIASTINO TESTICULAR.\n\nEsta tabicación da lugar a numerosos lobulillos (200-400), con forma de cuña, que contienen los túbulos seminíferos donde se forma el esperma. Los túbulos confluyen en el mediastino testicular formando la RETE TESTIS.\n\nEPIDÍDIMO\n\nEstructura curvada de unos 6-7 cm, situada posterolateralmente al testículo. Se divide en cabeza, cuerpo y cola. Su función es transportar el semen producido en los conductos espermáticos hasta el conducto deferente.\n\nAPÉNDICES TESTICULARES\n\nSon restos embrionarios. Los más frecuentes son el apéndice testicular, de morfología ovoidea y situado en la línea que separa el testículo de la cabeza del epidídimo, y el apéndice epididimario, similar al testicular pero pediculado y localizado en la cabeza del epidídimo.\n\nCORDÓN ESPERMÁTICO\n\nConstituido por el conducto deferente, arterias cremastérica, deferencial y testicular, plexo venoso pampiniforme, nervio genitofemoral, vasos linfáticos y nervios de los testículos. Tiene su origen en el anillo inguinal profundo y desciende verticalmente hacia el escroto.\n\nVASCULARIZACIÓN\n\nEl escroto y su contenido están irrigados por 3 arterias: cremastérica, testicular (rama de la aorta) y deferencial.\n\nEl drenaje venoso se realiza a través del plexo pampiniforme, formado por la unión de pequeñas venas testiculares que ascienden por el cordón espermático como una red que lo envuelve.' }
+    ]},
+    { title: 'TÉCNICA DE EXPLORACIÓN', subsections: [
+      { title: 'REVISIÓN PREVIA', content: 'Lo primero es revisar los estudios previos para realizar una comparativa.' },
+      { title: 'PREPARACIÓN DEL PACIENTE Y POSICIONAMIENTO', content: 'Decúbito supino, elevando el escroto y con el pene sobre el abdomen para separarlo de los testículos.' },
+      { title: 'EQUIPO', content: 'El estudio se hace con sonda lineal de alta frecuencia, ya que son órganos superficiales. Se recomiendan sondas entre 7-14 MHz. En casos de escroto aumentado, se pueden usar sondas convexas de baja frecuencia o funciones como imagen panorámica.\n\nEn cuanto al gel, es recomendable usar bastante. El Doppler color es conveniente usarlo con altas frecuencias, ya que aportan más resolución y más sensibilidad para la detección de flujos lentos o escasos.' }
+    ]}
+  ]
+};
