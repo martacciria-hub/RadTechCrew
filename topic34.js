@@ -142,44 +142,38 @@ function renderTopic34() {
 }
 
 function addTopic34Card() {
-  const content = document.getElementById('module-topics');
-  if (!content) return false;
-  let list = content.querySelector('.topic-list');
-  if (!list) {
-    list = document.createElement('div');
-    list.className = 'topic-list';
-    content.appendChild(list);
-  }
-  if (list.querySelector('[data-topic="34"]')) return true;
-  const card = document.createElement('button');
-  card.className = 'topic-card';
-  card.type = 'button';
-  card.dataset.topic = '34';
-  card.innerHTML = `<span class="module-number">TEMA 34</span><h3>TEMA 34. RADIOLOGÍA CONVENCIONAL. DENSITOMETRÍA</h3><span class="module-action">Abrir material →</span>`;
-  card.addEventListener('click', renderTopic34);
-  list.appendChild(card);
-  return true;
+  const module4 = document.querySelector('.module-card[data-module="4"]');
+  if (!module4) return;
+  module4.addEventListener('click', () => {
+    setTimeout(() => {
+      const content = document.getElementById('module-topics');
+      if (!content) return;
+      let list = content.querySelector('.topic-list');
+      if (!list) {
+        list = document.createElement('div');
+        list.className = 'topic-list';
+        content.appendChild(list);
+      }
+      if (list.querySelector('[data-topic="34"]')) return;
+      const card = document.createElement('button');
+      card.className = 'topic-card';
+      card.type = 'button';
+      card.dataset.topic = '34';
+      card.innerHTML = `<span class="module-number">TEMA 34</span><h3>TEMA 34. RADIOLOGÍA CONVENCIONAL. DENSITOMETRÍA</h3><span class="module-action">Abrir material →</span>`;
+      card.addEventListener('click', renderTopic34);
+      list.appendChild(card);
+    }, 50);
+  });
 }
 
 function startTopic34Integration() {
-  const ensure = () => addTopic34Card();
-  ensure();
-  document.addEventListener('click', (event) => {
-    const module4 = event.target.closest && event.target.closest('.module-card[data-module="4"]');
-    if (module4) setTimeout(ensure, 20);
-  });
-  const content = document.getElementById('module-topics');
-  if (content) {
-    const observer = new MutationObserver(ensure);
-    observer.observe(content, { childList: true, subtree: true });
-  }
-  setTimeout(ensure, 100);
-  setTimeout(ensure, 500);
-  setTimeout(ensure, 1000);
+  addTopic34Card();
+  const observer = new MutationObserver(() => addTopic34Card());
+  observer.observe(document.body, { childList: true, subtree: true });
 }
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', startTopic34Integration);
 } else {
   startTopic34Integration();
-}`
+}
