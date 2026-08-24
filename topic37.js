@@ -172,9 +172,9 @@ Aire en el interior de la vía biliar sin que ésta esté dilatada, se identific
 
 PÁNCREAS
 
-Órgano retroperitoneal situado fundamentalmente en línea media, en disposición oblicua, con la cola más craneal que la cabeza, que se extiende por el hipocondrio izquierdo. La eco no permite la valoración del páncreas por situarse posterior al estómago y al colon transverso, por lo que se puede recurrir a:
+Órgano retroperitoneal situado fundamentalmente en línea media, en disposición oblicua, con la cola más craneal que la cabeza, que se extiende por el hipocondrio izq. La eco no permite la valoración del páncreas por situarse posterior al estómago y al colon transverso, por lo que se puede recurrir a:
 
-→ Usar el lóbulo hepático izquierdo como ventana acústica.
+→ Usar el lóbulo hepático izq. como ventana acústica.
 → Buscar como referencia anatómica la vena esplénica y la mesentérica.
 → Usar el bazo como ventana acústica para valorar la cola del páncreas.
 → Mover al paciente.
@@ -203,19 +203,17 @@ La causa más frecuente es el abuso de alcohol, se ve como un páncreas hipereco
 
 BAZO
 
-Es un órgano intraperitoneal situado en el hipocondrio izquierdo posterior al ángulo esplénico del colon y la curvatura mayor gástrica, y posterior a los arcos costales inferiores izquierdos por lo que es poco frecuente poder estudiarlo desde la pared abdominal anterior y suele ser necesaria una aproximación lateral. No es aconsejable inspiraciones profundas ya que se interpone el seno costofrénico lateral entre la sonda y el bazo, es mejor respiraciones suaves, como siempre es necesario obtener al menos dos secciones, transversal y longitudinal.
+Es un órgano intraperitoneal situado en el hipocondrio izq. posterior al ángulo esplénico del colon y la curvatura mayor gástrica, y posterior a los arcos costales inferiores izq. por lo que es poco frecuente poder estudiarlo desde la pared abdominal anterior y suele ser necesaria una aproximación lateral. No es aconsejable inspiraciones profundas ya que se interpone el seno costofrénico lateral entre la sonda y el bazo, es mejor respiraciones suaves. Como siempre es necesario obtener al menos dos secciones, transversal y longitudinal.
 
 ANATOMÍA
 
 Órgano sólido con ecos finos y homogéneos similares al hígado, aunque también puede ser hipo/hiper en relación a él.
 
-Tiene una forma de haba, con convexidad lateral izquierda y un hilio central en su lado lateral derecho en el que se pueden identificar la arteria y la vena esplénica. Presenta un borde liso, con morfología en pico en su borde inferior, sirve como ventana acústica para la valoración del riñón izquierdo y la cola del páncreas.
+Tiene una forma de haba, con convexidad lateral izquierda y un hilio central en su lado lateral derecho en el que se pueden identificar la arteria y la vena esplénica. Presenta un borde liso, con morfología en pico en su borde inferior, sirve como ventana acústica para la valoración del riñón izq. y la cola del páncreas.
 
-Su tamaño y forma son variables, y su volumen disminuye con la edad. Se considera normal si su diámetro mayor longitudinal es de 13 cm o menos, es muy poco frecuente que lo podamos encontrar en una posición ectópica, aunque en ese caso habría que buscarlo en la pelvis o posterior al riñón izquierdo.
+Su tamaño y forma son variables, y su volumen disminuye con la edad. Se considera normal si su diámetro mayor longitudinal es de 13 cm o menos. Es muy poco frecuente que lo podamos encontrar en una posición ectópica, aunque en ese caso habría que buscarlo en la pelvis o posterior al riñón izq.
 
-BAZO ACCESORIO (ESPLENÚNCULI)
-
-Ocurre en el 10% de la población y es tejido esplénico aislado que se suele localizar alrededor del hilio esplénico, es de bordes bien definidos, con ecogenicidad igual a la del bazo y no suele superar los 2 cm. Es importante identificarlo ya que pueden crecer en caso de esplenomegalia.
+Bazo accesorio (esplenúnculos): ocurre el 10% de la población y es tejido esplénico aislado que se suele localizar alrededor del hilio esplénico, es de bordes bien definidos, con ecogenicidad igual a la del bazo y no suele superar los 2 cm. Es importante identificarlo ya que pueden crecer en caso de esplenomegalia.
 
 PATOLOGÍAS FRECUENTES
 
@@ -225,7 +223,51 @@ Bazo aumentado de tamaño (+ de 13 cm), esta medida se puede correlacionar con l
 
 ⟶ TRAUMATISMO ESPLÉNICO
 
-El bazo es el órgano intraabdominal que con más frecuencia sufre lesiones por traumatismo abdominal, al estar formado por múltiples lagos vasculares, su rotura es frecuente. Hay que poner especial atención en su valoración, ya que pueden aparecer hematomas intraesplénicos, subcapsulares o periesplénicos, laceraciones y roturas con sangrado a cavidad peritoneal.
+El bazo es el órgano intraabdominal que con más frecuencia sufre lesiones por traumatismo abdominal. Al estar formado por múltiples lagos vasculares, su rotura es frecuente. Hay que poner especial atención en su valoración, ya que pueden aparecer hematomas intraesplénicos, subcapsulares o periesplénicos, laceraciones y roturas con sangrado a cavidad peritoneal.
 
-⟶ MASAS ESPLÉNICAS
-`
+⟶ MASAS ESPLÉNICAS`;
+
+if (typeof topics !== 'undefined') {
+  topics[37] = { title: 'TEMA 37. EXPLORACIÓN DE HÍGADO, VÍA BILIAR, PÁNCREAS Y BAZO', content: topic37Content };
+}
+
+function renderTopic37() {
+  const view = document.getElementById('module-view');
+  const content = view && view.querySelector('.module-topics');
+  if (!content || !topics[37]) return;
+  const topic = topics[37];
+  content.innerHTML = `<button class="secondary-button topic-back" type="button">← Volver a temas</button><article class="study-material"><div class="topic-heading"><p class="eyebrow">MATERIAL DE ESTUDIO</p><h2>${topic.title}</h2></div><div class="topic-content">${formatStudyText(topic.content)}</div></article>`;
+  content.querySelector('.topic-back').addEventListener('click', () => { const module5 = document.querySelector('.module-card[data-module="5"]'); if (module5) module5.click(); });
+  view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function addTopic37Card() {
+  const module5 = document.querySelector('.module-card[data-module="5"]');
+  if (!module5) return;
+  module5.addEventListener('click', () => {
+    setTimeout(() => {
+      const content = document.querySelector('#module-view .module-topics');
+      if (!content) return;
+      let list = content.querySelector('.topic-list');
+      if (!list) {
+        list = document.createElement('div');
+        list.className = 'topic-list';
+        content.appendChild(list);
+      }
+      if (list.querySelector('[data-topic="37"]')) return;
+      const card = document.createElement('button');
+      card.className = 'topic-card';
+      card.type = 'button';
+      card.dataset.topic = '37';
+      card.innerHTML = `<span class="module-number">TEMA 37</span><h3>TEMA 37. EXPLORACIÓN DE HÍGADO, VÍA BILIAR, PÁNCREAS Y BAZO</h3><span class="module-action">Abrir material →</span>`;
+      card.addEventListener('click', renderTopic37);
+      list.appendChild(card);
+    }, 50);
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', addTopic37Card);
+} else {
+  addTopic37Card();
+}
