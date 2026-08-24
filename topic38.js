@@ -170,3 +170,48 @@ PUNTOS CLAVE
 • HCB: variante normal que puede simular tumor.
 • Quiste simple: redondeado, bien definido, paredes lisas y totalmente anecogénico.
 • Residuo postmiccional: tres diámetros × 0,56.`;
+
+if (typeof topics !== 'undefined') {
+  topics[38] = { title: 'TEMA 38. EXPLORACIÓN ECOGRÁFICA DE RIÑÓN Y VEJIGA', content: topic38Content };
+}
+
+function renderTopic38() {
+  const view = document.getElementById('module-view');
+  const content = view && view.querySelector('.module-topics');
+  if (!content || !topics[38]) return;
+  const topic = topics[38];
+  content.innerHTML = `<button class="secondary-button topic-back" type="button">← Volver a temas</button><article class="study-material"><div class="topic-heading"><p class="eyebrow">MATERIAL DE ESTUDIO</p><h2>${topic.title}</h2></div><div class="topic-content">${formatStudyText(topic.content)}</div></article>`;
+  content.querySelector('.topic-back').addEventListener('click', () => { const module5 = document.querySelector('.module-card[data-module="5"]'); if (module5) module5.click(); });
+  view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function addTopic38Card() {
+  const module5 = document.querySelector('.module-card[data-module="5"]');
+  if (!module5) return;
+  module5.addEventListener('click', () => {
+    setTimeout(() => {
+      const content = document.querySelector('#module-view .module-topics');
+      if (!content) return;
+      let list = content.querySelector('.topic-list');
+      if (!list) {
+        list = document.createElement('div');
+        list.className = 'topic-list';
+        content.appendChild(list);
+      }
+      if (list.querySelector('[data-topic="38"]')) return;
+      const card = document.createElement('button');
+      card.className = 'topic-card';
+      card.type = 'button';
+      card.dataset.topic = '38';
+      card.innerHTML = `<span class="module-number">TEMA 38</span><h3>TEMA 38. EXPLORACIÓN ECOGRÁFICA DE RIÑÓN Y VEJIGA</h3><span class="module-action">Abrir material →</span>`;
+      card.addEventListener('click', renderTopic38);
+      list.appendChild(card);
+    }, 50);
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', addTopic38Card);
+} else {
+  addTopic38Card();
+}
