@@ -11,9 +11,9 @@ La mama está dividida en compartimentos incompletos por tejido conectivo, descr
 
 Por debajo de la piel está la grasa subcutánea, que en algunas mujeres está separada del cono de parénquima de la mama y en otras no se distingue la grasa de las estructuras glandulares.
 
-La superficie del pezón es irregular y en él se encuentran los orificios de los ductos, hay entre 8 y 20 conductos mayores que se abren en el pezón, y cada uno de ellos definen el segmento de la glándula. Los conductos mayores se dilatan en la porción ampular y después se ramifican, de forma que los ductos segmentarios profundos se dividen en estructuras subsegmentarias y éstas se ramifican hasta formar acinos (unidades funcionales y secretoras de la glándula mamaria, encargadas de sintetizar y almacenar la leche durante la lactancia.)
+La superficie del pezón es irregular y en él se encuentran los orificios de los ductos, hay entre 8 y 20 conductos mayores que se abren en el pezón, y cada uno de ellos define el segmento de la glándula. Los conductos mayores se dilatan en la porción ampular y después se ramifican, de forma que los ductos segmentarios profundos se dividen en estructuras subsegmentarias y éstas se ramifican hasta formar acinos (unidades funcionales y secretoras de la glándula mamaria, encargadas de sintetizar y almacenar la leche durante la lactancia).
 
-La mama sufre cambios involutivos con la edad, las células acinares de los lobulillos disminuyen, el tejido conectivo se hace fibrótico... Ésta involución probablemente comienza en la tercera o cuarta década y está bastante avanzada en la menopausia.
+La mama sufre cambios involutivos con la edad, las células acinares de los lobulillos disminuyen, el tejido conectivo se hace fibrótico... Esta involución probablemente comienza en la tercera o cuarta década y está bastante avanzada en la menopausia.
 
 NOMENCLATURA
 
@@ -81,11 +81,11 @@ Proyección Valle: Útil para ver el tejido situado cerca del esternón, para ha
 
 Proyección ML (90º): Es la 3ª proyección más usada, si una lesión se ve en la Oblicua pero no en la CC, se hace la lateral pura para ver si la lesión es real, o una superposición de los tejidos.
 
-Se usa básicamente cuando hay que colocar un arpón, en éste caso se necesitan dos proyecciones perpendiculares entre sí, si es necesario se pide a la paciente que retraiga la mama contralateral para evitar superposición.
+Se usa básicamente cuando hay que colocar un arpón, en este caso se necesitan dos proyecciones perpendiculares entre sí, si es necesario se pide a la paciente que retraiga la mama contralateral para evitar superposición.
 
-Proyección LM (90º): Si existe una lesión en los tejidos mediales de la mama, la imagen será más nítida si se emplea ésta proyección
+Proyección LM (90º): Si existe una lesión en los tejidos mediales de la mama, la imagen será más nítida si se emplea esta proyección
 
-Proyección modificada Caudo Craneal (al revés): Se usa sobretodo en mujeres con mucha cifosis, en mamas pequeñas y en varones
+Proyección modificada Caudo Craneal (al revés): Se usa sobre todo en mujeres con mucha cifosis, en mamas pequeñas y en varones
 
 Mama masculina: Se realiza igual que la femenina con las mismas proyecciones estándar, modificando la cráneo-caudal si es necesario.
 
@@ -149,6 +149,43 @@ Se puede obtener por: ⟶ mamo (estereotaxia), basada en el cálculo de coordena
 
 ⟶ Galactografía, para estudiar los conductos galactóforos a través de un contraste yodado hidrosoluble radiopaco. Se canaliza el orificio del conducto y se introduce un pequeño catéter, se introduce el contraste hasta que haya reflujo y se hacen dos proyecciones CC y LAT, sin aplicar compresión. Se indica en casos de secreción patológica por el pezón.`;
 
-if (typeof window !== 'undefined') {
-  window.topic33Content = topic33Content;
+if (typeof topics !== 'undefined') {
+  topics[33] = { title: 'TEMA 33. ESTUDIO RADIOLÓGICO DE LA MAMA, MX Y GALACTO', content: topic33Content };
 }
+
+function renderTopic33() {
+  const view = document.getElementById('module-view');
+  const content = view && view.querySelector('.module-topics');
+  if (!content) return;
+  const topic = topics[33];
+  content.innerHTML = `<button class="secondary-button topic-back" type="button">← Volver a temas</button><article class="study-material"><div class="topic-heading"><p class="eyebrow">MATERIAL DE ESTUDIO</p><h2>${topic.title}</h2></div><div class="topic-content">${formatStudyText(topic.content)}</div></article>`;
+  content.querySelector('.topic-back').addEventListener('click', () => { const module4 = document.querySelector('.module-card[data-module="4"]'); if (module4) module4.click(); });
+  view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function addTopic33Card() {
+  const module4 = document.querySelector('.module-card[data-module="4"]');
+  if (!module4 || module4.dataset.topic33Ready === '1') return;
+  module4.dataset.topic33Ready = '1';
+  module4.addEventListener('click', () => {
+    setTimeout(() => {
+      const content = document.querySelector('#module-view .module-topics');
+      if (!content) return;
+      let list = content.querySelector('.topic-list');
+      if (!list) {
+        content.innerHTML = '<div class="topic-list"></div>';
+        list = content.querySelector('.topic-list');
+      }
+      if (list.querySelector('[data-topic="33"]')) return;
+      const card = document.createElement('button');
+      card.className = 'topic-card';
+      card.type = 'button';
+      card.dataset.topic = '33';
+      card.innerHTML = `<span class="module-number">TEMA 33</span><h3>TEMA 33. ESTUDIO RADIOLÓGICO DE LA MAMA, MX Y GALACTO</h3><span class="module-action">Abrir material →</span>`;
+      card.addEventListener('click', renderTopic33);
+      list.appendChild(card);
+    }, 0);
+  });
+}
+
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addTopic33Card); else addTopic33Card();
