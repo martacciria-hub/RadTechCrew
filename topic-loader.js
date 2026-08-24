@@ -1,7 +1,16 @@
 // CARGADOR DE TEMAS DE RADTECHCREW
 // Se ejecuta después de cargar los archivos topicXX.js.
 (function () {
-  const topicNumbers = [18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
+  const topicGroups = [
+    {
+      title: 'técnicas de radiología convencional',
+      numbers: [18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+    },
+    {
+      title: 'ecografía',
+      numbers: [35, 36, 37]
+    }
+  ];
 
   function getTopicContent(n) {
     try {
@@ -16,12 +25,13 @@
     const container = document.getElementById('module-topics');
     if (!title || !container) return;
 
-    const isModule4 = title.textContent.trim().toLowerCase().includes('técnicas de radiología convencional');
-    if (!isModule4) return;
+    const moduleTitle = title.textContent.trim().toLowerCase();
+    const group = topicGroups.find((item) => moduleTitle.includes(item.title));
+    if (!group) return;
 
     container.innerHTML = '';
 
-    topicNumbers.forEach((n) => {
+    group.numbers.forEach((n) => {
       const content = getTopicContent(n);
       if (!content) return;
 
