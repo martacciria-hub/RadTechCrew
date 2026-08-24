@@ -142,32 +142,29 @@ function renderTopic34() {
 }
 
 function addTopic34Card() {
-  const module4 = document.querySelector('.module-card[data-module="4"]');
-  if (!module4 || module4.dataset.topic34Ready === '1') return;
-  module4.dataset.topic34Ready = '1';
-  module4.addEventListener('click', () => {
-    setTimeout(() => {
-      const content = document.querySelector('#module-view .module-topics');
-      if (!content) return;
-      let list = content.querySelector('.topic-list');
-      if (!list) {
-        content.innerHTML = '<div class="topic-list"></div>';
-        list = content.querySelector('.topic-list');
-      }
-      if (list.querySelector('[data-topic="34"]')) return;
-      const card = document.createElement('button');
-      card.className = 'topic-card';
-      card.type = 'button';
-      card.dataset.topic = '34';
-      card.innerHTML = `<span class="module-number">TEMA 34</span><h3>TEMA 34. RADIOLOGÍA CONVENCIONAL. DENSITOMETRÍA</h3><span class="module-action">Abrir material →</span>`;
-      card.addEventListener('click', renderTopic34);
-      list.appendChild(card);
-    }, 0);
-  });
+  const content = document.getElementById('module-topics');
+  if (!content) return;
+  const list = content.querySelector('.topic-list');
+  if (!list || list.querySelector('[data-topic="34"]')) return;
+  const card = document.createElement('button');
+  card.className = 'topic-card';
+  card.type = 'button';
+  card.dataset.topic = '34';
+  card.innerHTML = `<span class="module-number">TEMA 34</span><h3>TEMA 34. RADIOLOGÍA CONVENCIONAL. DENSITOMETRÍA</h3><span class="module-action">Abrir material →</span>`;
+  card.addEventListener('click', renderTopic34);
+  list.appendChild(card);
+}
+
+function startTopic34Integration() {
+  const content = document.getElementById('module-topics');
+  if (!content) return;
+  addTopic34Card();
+  const observer = new MutationObserver(() => addTopic34Card());
+  observer.observe(content, { childList: true, subtree: true });
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', addTopic34Card);
+  document.addEventListener('DOMContentLoaded', startTopic34Integration);
 } else {
-  addTopic34Card();
+  startTopic34Integration();
 }`
