@@ -1,13 +1,17 @@
 function renderModuleTopics(moduleNumber) {
   const moduleTopics = moduleNumber === 5 ? [38, 39] : (moduleNumber === 1 ? [1, 2, 3] : []);
   if (!moduleTopics.length) return '<div class="coming-soon">📚 Los temas de este módulo se incorporarán aquí.</div>';
-  return `<div class="topic-list">${moduleTopics.map(topicNumber => `
+
+  return `<div class="topic-list">${moduleTopics.map(topicNumber => {
+    const topic = topics[topicNumber];
+    const title = topic ? topic.title : `TEMA ${topicNumber}. EXPLORACIÓN ECOGRÁFICA DEL APARATO GENITAL MASCULINO`;
+    return `
     <button class="topic-card" type="button" data-topic="${topicNumber}">
       <span class="module-number">TEMA ${topicNumber}</span>
-      <h3>${topics[topicNumber].title}</h3>
+      <h3>${title}</h3>
       <span class="module-action">Abrir material →</span>
-    </button>
-  `).join('')}</div>`;
+    </button>`;
+  }).join('')}</div>`;
 }
 
 document.addEventListener('click', (event) => {
