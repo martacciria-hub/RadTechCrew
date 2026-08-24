@@ -8,6 +8,7 @@ La osteoporosis consiste en la disminución de la masa ósea y de su resistencia
 La densitometría es la técnica diagnóstica que permite medir la densidad mineral del hueso.
 
 Hay diferentes zonas de estudio:
+
 ⟶ D. de cuerpo entero: obtiene el análisis de la composición corporal determinando el porcentaje de tejido óseo, grasa y partes blandas de todo el organismo y su distribución por regiones.
 ⟶ D. de columna vertebral
 ⟶ Valoración de la integración de prótesis de cadera
@@ -26,11 +27,14 @@ ABSORCIOMETRÍA CON RX DE DOBLE ENERGÍA:
 1. EQUIPOS
 
 La tecnología varía tanto en hardware (filtros, voltaje) y software (algoritmo) como en la geometría del haz, los equipos consisten en una fuente de RX y un detector de alta resolución. La fuente (tubo de RX) de baja dosis, los equipos de DXA se basan en la energía dual, o sea, producen fotones de dos niveles de energía, existen dos sistemas diferentes para obtener energía dual:
+
 ⟶ 1: Emisión alternante de radiación de alto y bajo kilovoltaje
 ⟶ 2: Un haz monoenergético al que se le añade un filtro de tierras raras para absorber energía separando los fotones de alta y baja energía.
 
 Según la morfología del haz, hay dos tipos de equipos:
+
 HAZ EN LAPICERO ⟶ colimador puntual, se registra con un único detector
+
 HAZ EN ABANICO ⟶ colimador en hendidura, precisa un detector múltiple.
 
 ABSORCIOMETRÍA CON RX DE DOBLE ENERGÍA PORTÁTIL (esqueleto periférico)
@@ -46,6 +50,7 @@ Es el equipo más usado para el estudio de osteoporosis estudiando las regiones 
 PROTOCOLOS DE ESTUDIO EN MESA ESTABLE
 
 ⟶ Preparación del estudio: los pacientes no requieren una preparación específica, aunque es importante interrogar al paciente para saber:
+
 1. Contraindicaciones: embarazo, contraste oral 5 días antes, estudios de medicina nuclear 2 días antes,
 2. Lesiones o enfermedades óseas: fracturas, espondilitis...
 3. Debemos retirar todos los objetos metálicos.
@@ -53,6 +58,7 @@ PROTOCOLOS DE ESTUDIO EN MESA ESTABLE
 5. Explicación del estudio y la necesidad de permanecer quieto durante el estudio.
 
 ⟶ Regiones de estudio en ADULTOS: el estudio se realiza generalmente en columna lumbar (L1-L4) y fémur proximal, añadiremos el antebrazo en pacientes en los que una de las áreas anteriores no sirva, o en pacientes con hiperparatiroidismo, ya que en ellos el antebrazo se suele afectar de manera precoz.
+
 ⟶ Regiones de estudio en NIÑOS y ADOLESCENTES (-20): Sólo se estudia el área lumbar.
 
 COLOCACIÓN DEL PACIENTE Y CENTRAJE
@@ -86,10 +92,13 @@ Antebrazo ⟶ La ROI se sitúa en la extremidad distal del radio con la línea d
 INTERPRETACIÓN DEL ESTUDIO, TERMINOLOGÍA
 
 ⟶ Contenido mineral óseo: Cantidad CONCRETA
+
 ⟶ Densidad mineral ósea: Cantidad MEDIA de calcio por unidad de área (g/cm2) o volumen (g/cm3) y se calcula dividiendo el contenido mineral óseo por un área o volumen.
+
 ⟶ Puntuación T: Sirve para el diagnóstico de osteoporosis en mujeres posmenopáusicas y se usa también en hombres mayores de 50 años. Esta puntuación es el número de desviaciones estándar de diferencia entre el valor de DMO del paciente y la media de una población de referencia adulta joven de la misma raza y sexo.
 
 Los valores son:
+
 1. Normal: puntuación T >-1,0
 2. Osteopenia: puntuación T entre -1 y -2,5
 3. Osteoporosis: puntuación T <-2,5.
@@ -105,8 +114,11 @@ ABSORCIOMETRÍA CON RAYOS X DE DOBLE ENERGÍA AXIAL EJECUTADA CON MESA ESTABLE D
 INTERPRETACIÓN DEL ESTUDIO (TERMINOLOGÍA)
 
 El equipo calcula la composición por regiones anatómicas: masa grasa, masa magra y hueso en todo el organismo y por regiones. También obtiene la distribución de la grasa en regiones predefinidas en el área pélvica:
+
 ⟶ Androide (central)
+
 ⟶ Ginoide (cadera y muslos)
+
 ⟶ La proporción grasa pélvica es la relación entre el porcentaje de grasa de región androide y ginoide.
 
 El índice de masa corporal no distingue grasa de músculo. Los valores de DMO en cuerpo entero sirven para estimar la mineralización, pero no permiten el diagnóstico de osteoporosis (es necesario hacer el estudio de columna y cadera para correlacionar con las curvas de referencia).
@@ -129,47 +141,33 @@ function renderTopic34() {
   view.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function ensureTopic34Card() {
+function addTopic34Card() {
   const module4 = document.querySelector('.module-card[data-module="4"]');
-  if (!module4) return false;
-  if (module4.dataset.topic34Ready !== '1') {
-    module4.dataset.topic34Ready = '1';
-    module4.addEventListener('click', () => {
-      setTimeout(ensureTopic34CardInList, 50);
-    });
-  }
-  ensureTopic34CardInList();
-  return true;
-}
-
-function ensureTopic34CardInList() {
-  const content = document.querySelector('#module-view .module-topics');
-  if (!content) return;
-  let list = content.querySelector('.topic-list');
-  if (!list) {
-    setTimeout(ensureTopic34CardInList, 50);
-    return;
-  }
-  if (list.querySelector('[data-topic="34"]')) return;
-  const card = document.createElement('button');
-  card.className = 'topic-card';
-  card.type = 'button';
-  card.dataset.topic = '34';
-  card.innerHTML = `<span class="module-number">TEMA 34</span><h3>TEMA 34. RADIOLOGÍA CONVENCIONAL. DENSITOMETRÍA</h3><span class="module-action">Abrir material →</span>`;
-  card.addEventListener('click', renderTopic34);
-  list.appendChild(card);
-}
-
-function startTopic34Integration() {
-  if (ensureTopic34Card()) return;
-  const timer = setInterval(() => {
-    if (ensureTopic34Card()) clearInterval(timer);
-  }, 100);
-  setTimeout(() => clearInterval(timer), 10000);
+  if (!module4 || module4.dataset.topic34Ready === '1') return;
+  module4.dataset.topic34Ready = '1';
+  module4.addEventListener('click', () => {
+    setTimeout(() => {
+      const content = document.querySelector('#module-view .module-topics');
+      if (!content) return;
+      let list = content.querySelector('.topic-list');
+      if (!list) {
+        content.innerHTML = '<div class="topic-list"></div>';
+        list = content.querySelector('.topic-list');
+      }
+      if (list.querySelector('[data-topic="34"]')) return;
+      const card = document.createElement('button');
+      card.className = 'topic-card';
+      card.type = 'button';
+      card.dataset.topic = '34';
+      card.innerHTML = `<span class="module-number">TEMA 34</span><h3>TEMA 34. RADIOLOGÍA CONVENCIONAL. DENSITOMETRÍA</h3><span class="module-action">Abrir material →</span>`;
+      card.addEventListener('click', renderTopic34);
+      list.appendChild(card);
+    }, 0);
+  });
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startTopic34Integration);
+  document.addEventListener('DOMContentLoaded', addTopic34Card);
 } else {
-  startTopic34Integration();
+  addTopic34Card();
 }`
