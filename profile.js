@@ -1,0 +1,10 @@
+document.addEventListener('DOMContentLoaded',()=>{
+ const root=document.getElementById('profile-content'); if(!root)return;
+ const read=()=>{try{return JSON.parse(localStorage.getItem('radtech_tests_v2')||'{}')}catch{return{}}};
+ const render=()=>{
+  const d=read(),s=d.stats||{},answered=s.answered||0,correct=s.correct||0,rate=answered?Math.round(correct/answered*100):0,errors=Object.keys(d.errors||{}).filter(k=>(d.errors||{})[k]>0).length;
+  const xp=answered*10+correct*5,level=Math.floor(xp/500)+1,into=xp%500,pct=Math.min(100,Math.round(into/500*100));
+  root.innerHTML=`<div class="profile-hero"><div class="profile-avatar">🩻</div><div><p class="eyebrow">TU ESPACIO DE ENTRENAMIENTO</p><h2>👤 Mi perfil</h2><p class="profile-sub">Tu evolución en RadTechCrew, resumida en un solo vistazo.</p></div></div><div class="profile-grid"><div class="profile-stat"><span>🧠</span><strong>${answered}</strong><small>Preguntas respondidas</small></div><div class="profile-stat"><span>🎯</span><strong>${rate}%</strong><small>Precisión global</small></div><div class="profile-stat"><span>✅</span><strong>${correct}</strong><small>Respuestas correctas</small></div><div class="profile-stat"><span>⚠️</span><strong>${errors}</strong><small>Errores pendientes</small></div></div><div class="profile-progress"><div class="profile-progress-head"><div><p class="eyebrow">PROGRESO</p><h3>Nivel ${level} · Técnico/a en entrenamiento</h3></div><strong>${xp} XP</strong></div><div class="xp-track"><span style="width:${pct}%"></span></div><p>${into} / 500 XP para el siguiente nivel</p></div><div class="profile-focus"><div><p class="eyebrow">SIGUIENTE PASO</p><h3>🎯 Sigue entrenando</h3><p>Completa tests para que tu progreso se actualice automáticamente y podamos construir después tus logros y puntos fuertes.</p></div><a href="tests.html" class="profile-button">Ir a entrenar →</a></div>`;
+ };
+ render(); window.addEventListener('storage',render); document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});
+});
