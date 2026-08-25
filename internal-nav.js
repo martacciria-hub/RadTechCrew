@@ -1,0 +1,7 @@
+document.addEventListener('DOMContentLoaded',()=>{
+ const isTests=location.pathname.endsWith('tests.html');
+ const main=document.querySelector('main'); if(!main)return;
+ const focus=(el,label,backFn)=>{if(!el)return; el.classList.add('focus-screen'); let b=el.querySelector(':scope > .internal-back'); if(!b){b=document.createElement('button');b.className='secondary-button internal-back';b.type='button';b.textContent='← '+label;el.prepend(b)} b.onclick=backFn; window.scrollTo({top:0,behavior:'smooth'});};
+ if(isTests){const launcher=main.querySelector('.panel:not(#workspace)'),ws=document.getElementById('workspace'); if(!launcher||!ws)return; launcher.addEventListener('click',e=>{if(e.target.closest('[data-action]'))setTimeout(()=>{launcher.hidden=true;ws.hidden=false;focus(ws,'Volver a Zona de Tests',()=>{ws.hidden=true;launcher.hidden=false;window.scrollTo({top:0,behavior:'smooth'})})},0)});
+ }else{const study=document.getElementById('estudio'),mv=document.getElementById('module-view'); if(!study||!mv)return; study.addEventListener('click',e=>{if(e.target.closest('.module-card'))setTimeout(()=>focus(mv,'Volver a módulos',()=>{mv.hidden=true;study.hidden=false;window.scrollTo({top:0,behavior:'smooth'})}),0)});}
+});
