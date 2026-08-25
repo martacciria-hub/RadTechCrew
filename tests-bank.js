@@ -12,30 +12,29 @@ const curated=[
 ['¿Qué principio de protección radiológica exige que una exposición aporte un beneficio que la justifique?',['Justificación','Optimización','Dosimetría','Colimación'],0,'Protección radiológica','medio']
 ];
 
-// Banco revisado específicamente para el TEMA 1.
-// Se mantiene separado del generador automático para evitar preguntas artificiales o ambiguas.
+// Banco específico y revisado del TEMA 1.
+// No utiliza generación automática de preguntas a partir de frases del contenido.
 const topic1Curated=[
-['¿En qué año descubrió Wilhelm Conrad Röntgen los rayos X?',['1895','1905','1911','1913'],0,'TEMA 1','fácil'],
-['¿En qué fecha realizó Röntgen la primera radiografía de la mano de su mujer?',['22 de diciembre de 1895','8 de noviembre de 1895','1 de enero de 1896','22 de diciembre de 1896'],0,'TEMA 1','medio'],
-['¿Qué hecho tuvo lugar el 8 de noviembre de 1895?',['Röntgen descubrió los rayos X','Se realizó la primera radiografía de la mano de su mujer','Se descubrió la RM','Se creó la primera promoción de técnicos de rayos'],0,'TEMA 1','fácil'],
-['¿Quién aparece asociado al descubrimiento del radio en la cronología del tema?',['Marie Curie','Salomon','Röntgen','Hounsfield'],0,'TEMA 1','fácil'],
-['¿A qué año corresponde la referencia a Marie Curie y el radio?',['1911','1895','1913','1952'],0,'TEMA 1','medio'],
-['¿Quién aparece asociado a la mamografía en la cronología del tema?',['Salomon','Marie Curie','Röntgen','Mansfield'],0,'TEMA 1','fácil'],
-['¿A qué año corresponde la referencia a Salomon y la mamografía?',['1913','1911','1952','1972'],0,'TEMA 1','medio'],
-['¿Quiénes aparecen asociados al fenómeno de resonancia magnética en 1952?',['F. Bloch y Purcell','Hounsfield y Cormack','Lauterbur y Mansfield','Röntgen y Curie'],0,'TEMA 1','medio'],
-['¿Qué acontecimiento se sitúa en 1972 en la cronología del tema?',['Primer protocolo de TAC cerebral','Primera promoción de técnicos de rayos','TAC helicoidal','Creación del TSID'],0,'TEMA 1','fácil'],
-['¿Quiénes aparecen asociados al PET en la cronología del tema?',['Lauterbur y Ter-Pogossian','Hounsfield y Cormack','F. Bloch y Purcell','Lauterbur y Mansfield'],0,'TEMA 1','medio'],
-['¿Qué acontecimiento corresponde a 1977?',['Primera promoción de técnicos de rayos','Primer protocolo de TAC cerebral','Primeras imágenes de TAC','Creación del TSID'],0,'TEMA 1','fácil'],
-['¿Quiénes aparecen asociados a las imágenes de TAC en 1979?',['Hounsfield y Cormack','Lauterbur y Mansfield','Bloch y Purcell','Röntgen y Salomon'],0,'TEMA 1','medio'],
-['¿En qué año se sitúa el TAC helicoidal en la cronología del tema?',['1990','1979','1995','2003'],0,'TEMA 1','fácil'],
-['¿En qué año aparece la referencia a TSID en la cronología?',['1995','1990','2003','2014'],0,'TEMA 1','fácil'],
-['¿Quiénes aparecen asociados a las imágenes de resonancia magnética en 2003?',['Lauterbur y Mansfield','Hounsfield y Cormack','Bloch y Purcell','Lauterbur y Ter-Pogossian'],0,'TEMA 1','medio'],
-['¿Qué acontecimiento corresponde a 2014?',['Técnico Superior en Imagen para el Diagnóstico y Medicina Nuclear','Primera promoción de técnicos de rayos','Primer protocolo de TAC cerebral','TAC helicoidal'],0,'TEMA 1','fácil'],
-['¿Cuál es la finalidad principal del trabajo del técnico según la introducción del tema?',['Obtener imágenes adecuadas para su posterior interpretación por el radiólogo','Realizar el diagnóstico médico definitivo','Prescribir el tratamiento del paciente','Interpretar de forma exclusiva las imágenes obtenidas'],0,'TEMA 1','medio'],
-['¿En qué se centraban las investigaciones previas al descubrimiento de los rayos X según el tema?',['En el estudio de la corriente eléctrica mediante gases encerrados en tubos con distintos grados de vacío','En el desarrollo de los primeros equipos de RM hospitalarios','En la creación de los primeros equipos PET','En el desarrollo de los primeros ecógrafos portátiles'],0,'TEMA 1','medio'],
-['¿Qué modificación se realizó en el ánodo durante los primeros avances de la radiología?',['Se modificó su inclinación hasta 20º','Se eliminó el ánodo del tubo','Se sustituyó por un detector digital','Se convirtió en un componente exclusivamente eléctrico'],0,'TEMA 1','difícil'],
-['¿Qué innovación se ideó posteriormente para disminuir la superficie de impacto sobre el ánodo?',['El ánodo giratorio','El ánodo de tungsteno fijo','El colimador automático','La mesa Bucky'],0,'TEMA 1','medio'],
-['¿Qué antecedente de los ultrasonidos se menciona en el tema?',['Pierre Curie y las primeras aplicaciones militares del sónar','Röntgen y la radiografía de tórax','Hounsfield y la TAC cerebral','Bloch y Purcell y la RM'],0,'TEMA 1','medio']
+['¿Quién descubrió los rayos X?',['Wilhelm Conrad Röntgen','Thomas Edison','Godfrey Hounsfield','Allan Cormack'],0,'TEMA 1','fácil'],
+['¿En qué año descubrió Wilhelm Conrad Röntgen los rayos X?',['1895','1890','1905','1911'],0,'TEMA 1','fácil'],
+['¿Qué fecha corresponde a la primera radiografía de la mano de la esposa de Röntgen?',['22 de diciembre de 1895','8 de noviembre de 1895','22 de diciembre de 1896','1 de enero de 1896'],0,'TEMA 1','medio'],
+['¿Qué ocurrió el 8 de noviembre de 1895?',['Röntgen descubrió los rayos X','Röntgen realizó la primera radiografía de la mano de su esposa','Se obtuvo la primera imagen de TAC','Se desarrolló la primera RM clínica'],0,'TEMA 1','fácil'],
+['¿Qué científico aparece relacionado con el descubrimiento del radio?',['Marie Curie','Röntgen','Salomon','Hounsfield'],0,'TEMA 1','fácil'],
+['¿En qué año recibió Marie Curie el Premio Nobel de Química por sus trabajos relacionados con el radio y el polonio?',['1911','1895','1913','1952'],0,'TEMA 1','medio'],
+['¿Quién está relacionado con el desarrollo inicial de la mamografía mediante el estudio radiológico de la mama?',['Albert Salomon','Marie Curie','Wilhelm Röntgen','Raymond Damadian'],0,'TEMA 1','medio'],
+['¿En qué año se sitúa el trabajo de Salomon relacionado con la mamografía?',['1913','1911','1952','1972'],0,'TEMA 1','medio'],
+['¿Qué científicos recibieron el Premio Nobel de Física de 1952 por sus trabajos fundamentales sobre la resonancia magnética nuclear?',['Félix Bloch y Edward Purcell','Hounsfield y Cormack','Lauterbur y Mansfield','Röntgen y Curie'],0,'TEMA 1','medio'],
+['¿Qué acontecimiento relacionado con la tomografía computarizada se sitúa en 1972?',['Primer protocolo de TAC cerebral','Introducción del TAC helicoidal','Primeras imágenes de RM','Primera promoción de técnicos de rayos'],0,'TEMA 1','medio'],
+['¿Qué investigadores aparecen relacionados con el desarrollo del PET en la cronología histórica?',['Michael E. Phelps y Edward J. Hoffman','Hounsfield y Cormack','Bloch y Purcell','Lauterbur y Mansfield'],0,'TEMA 1','difícil'],
+['¿Qué acontecimiento se sitúa en 1977 en la cronología histórica del tema?',['Primera promoción de técnicos de rayos','Primer protocolo de TAC cerebral','Primeras imágenes de TAC','Introducción del TAC helicoidal'],0,'TEMA 1','medio'],
+['¿Qué investigadores están asociados al desarrollo de las imágenes de TAC?',['Godfrey Hounsfield y Allan Cormack','Lauterbur y Mansfield','Bloch y Purcell','Röntgen y Salomon'],0,'TEMA 1','fácil'],
+['¿En qué año se sitúa la introducción del TAC helicoidal?',['1990','1972','1979','2003'],0,'TEMA 1','medio'],
+['¿En qué año se sitúa la referencia histórica a la titulación de Técnico Superior en Imagen para el Diagnóstico (TSID)?',['1995','1990','2003','2014'],0,'TEMA 1','medio'],
+['¿Qué investigadores recibieron el Premio Nobel de Fisiología o Medicina de 2003 por sus descubrimientos relacionados con la resonancia magnética?',['Paul C. Lauterbur y Peter Mansfield','Godfrey Hounsfield y Allan Cormack','Félix Bloch y Edward Purcell','Michael Phelps y Edward Hoffman'],0,'TEMA 1','medio'],
+['¿Qué titulación corresponde actualmente a la formación profesional superior del ámbito de la imagen para el diagnóstico y la medicina nuclear?',['Técnico Superior en Imagen para el Diagnóstico y Medicina Nuclear','Técnico Superior en Radiología Médica','Técnico Especialista en Radiodiagnóstico','Técnico Superior en Diagnóstico por Imagen'],0,'TEMA 1','fácil'],
+['¿En qué se centraban buena parte de las investigaciones que precedieron al descubrimiento de los rayos X?',['En el estudio de las descargas eléctricas en gases a diferentes presiones','En el desarrollo de equipos de resonancia magnética','En la obtención de imágenes mediante ultrasonidos','En el desarrollo de detectores digitales'],0,'TEMA 1','medio'],
+['¿Qué modificación del ánodo permitió mejorar las condiciones de producción de rayos X al reducir la concentración del impacto sobre una zona fija?',['La incorporación del ánodo giratorio','La eliminación del ánodo','La sustitución del ánodo por un detector digital','La incorporación de un colimador automático'],0,'TEMA 1','medio'],
+['¿Qué científico está relacionado con las primeras aplicaciones militares del sónar, antecedente de las aplicaciones posteriores de los ultrasonidos?',['Paul Langevin','Wilhelm Röntgen','Godfrey Hounsfield','Allan Cormack'],0,'TEMA 1','difícil']
 ];
 
 const topicSpecific=(typeof topic37Curated!=='undefined')?topic37Curated:[];
