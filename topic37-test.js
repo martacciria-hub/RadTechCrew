@@ -25,29 +25,34 @@ const topic37Curated = [
 
 (function(){
   const workspace=document.getElementById('workspace');
+  const launcher=document.querySelector('.tests-launcher');
   const cards=document.querySelector('.tests-launcher .cards');
-  if(!workspace||!cards)return;
+  if(!workspace||!launcher||!cards)return;
   const card=document.createElement('button');
   card.className='module-card';
   card.type='button';
-  card.innerHTML='<span class="module-number">🧪 PILOTO</span><h3>Tema 37 · Test nuevo</h3><p>20 preguntas redactadas como examen</p><span class="module-action">Probar →</span>';
+  card.innerHTML='<span class="module-number">📚 TEMA 37</span><h3>Exploración abdominal · Test</h3><p>20 preguntas redactadas como examen</p><span class="module-action">Entrenar →</span>';
   cards.appendChild(card);
   const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const shuffle=a=>a.slice().sort(()=>Math.random()-0.5);
   const prepare=q=>{const opts=shuffle(q[1].map((text,i)=>({text,i})));return [q[0],opts.map(x=>x.text),opts.findIndex(x=>x.i===q[2])];};
   function start(){
     const qs=shuffle(topic37Curated).map(prepare); let pos=0,score=0;
+    launcher.hidden=true;
     workspace.hidden=false;
+    window.scrollTo({top:0,behavior:'instant'});
     function render(){
       if(pos>=qs.length){
-        workspace.innerHTML=`<div class="study-material"><p class="eyebrow">TEST PILOTO · TEMA 37</p><h2>🏆 Test terminado</h2><p class="final-score">${score} / ${qs.length}</p><p>${Math.round(score/qs.length*100)}% de aciertos</p><button class="secondary-button" id="pilot-again">Repetir</button></div>`;
-        document.getElementById('pilot-again').onclick=start; return;
+        workspace.innerHTML=`<div class="study-material"><p class="eyebrow">TEST · TEMA 37</p><h2>🏆 Test terminado</h2><p class="final-score">${score} / ${qs.length}</p><p>${Math.round(score/qs.length*100)}% de aciertos</p><button class="secondary-button" id="pilot-again">Repetir</button><button class="secondary-button" id="pilot-menu">Volver a Tests</button></div>`;
+        document.getElementById('pilot-again').onclick=start;
+        document.getElementById('pilot-menu').onclick=()=>{workspace.hidden=true;launcher.hidden=false;window.scrollTo({top:0,behavior:'instant'});};
+        return;
       }
       const q=qs[pos];
-      workspace.innerHTML=`<div class="study-material"><p class="eyebrow">TEST PILOTO · TEMA 37</p><h2>Pregunta ${pos+1} de ${qs.length}</h2><p>${esc(q[0])}</p><div class="answer-grid">${q[1].map((a,i)=>`<button class="answer-option" data-i="${i}">${String.fromCharCode(65+i)}) ${esc(a)}</button>`).join('')}</div><p class="exam-progress">Aciertos: ${score}</p></div>`;
+      workspace.innerHTML=`<div class="study-material"><p class="eyebrow">TEST · TEMA 37</p><h2>Pregunta ${pos+1} de ${qs.length}</h2><p>${esc(q[0])}</p><div class="answer-grid">${q[1].map((a,i)=>`<button class="answer-option" data-i="${i}">${String.fromCharCode(65+i)}) ${esc(a)}</button>`).join('')}</div><p class="exam-progress">Aciertos: ${score}</p></div>`;
       workspace.querySelectorAll('.answer-option').forEach(b=>b.onclick=()=>{
         const chosen=+b.dataset.i; workspace.querySelectorAll('.answer-option').forEach((x,i)=>{x.disabled=true;if(i===q[2])x.classList.add('correct');if(i===chosen&&chosen!==q[2])x.classList.add('wrong')});
-        if(chosen===q[2])score++; setTimeout(()=>{pos++;render()},450);
+        if(chosen===q[2])score++; setTimeout(()=>{pos++;render();window.scrollTo({top:0,behavior:'instant'});},450);
       });
     }
     render();
