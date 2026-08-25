@@ -26,13 +26,8 @@ const topic37Curated = [
 (function(){
   const workspace=document.getElementById('workspace');
   const launcher=document.querySelector('.tests-launcher');
-  const cards=document.querySelector('.tests-launcher .cards');
-  if(!workspace||!launcher||!cards)return;
-  const card=document.createElement('button');
-  card.className='module-card';
-  card.type='button';
-  card.innerHTML='<span class="module-number">📚 TEMA 37</span><h3>Exploración abdominal · Test</h3><p>20 preguntas redactadas como examen</p><span class="module-action">Entrenar →</span>';
-  cards.appendChild(card);
+  const card=document.querySelector('[data-action="topic37"]');
+  if(!workspace||!launcher||!card)return;
   const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const shuffle=a=>a.slice().sort(()=>Math.random()-0.5);
   const prepare=q=>{const opts=shuffle(q[1].map((text,i)=>({text,i})));return [q[0],opts.map(x=>x.text),opts.findIndex(x=>x.i===q[2])];};
