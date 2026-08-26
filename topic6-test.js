@@ -33,3 +33,4 @@ const topic6Curated=[
 ['Una imagen digital presenta una matriz de 1024 × 1024 píxeles. ¿Cuántos píxeles contiene?',['1.048.576','2.048','10.240','1.024'],0,'TEMA 6','difícil'],
 ['¿Qué afirmación diferencia correctamente profundidad de color y resolución?',['La profundidad de color se refiere a los colores representables por píxel y la resolución a la densidad de píxeles','Ambas expresan el número de colores por píxel','La resolución expresa siempre el tamaño del archivo','La profundidad de color indica exclusivamente el número total de píxeles'],0,'TEMA 6','difícil']
 ];
+const topic6Specific=topic6Curated;
