@@ -54,12 +54,20 @@ const topic7Curated = [
   ['¿Qué representa Value en un data element DICOM?', ['El valor del elemento de datos','La etiqueta que lo identifica','La longitud del campo','El tipo de modalidad'], 0, 'TEMA 7', 'fácil']
 ];
 
-const previousTopicMenu7 = topicMenu;
+// Sustituye únicamente la tarjeta del TEMA 7 que ya genera el sistema.
+// No crea una segunda tarjeta ni modifica el motor de tests.
+const topic7OriginalTopicMenu = topicMenu;
 topicMenu = function(){
-  previousTopicMenu7();
+  topic7OriginalTopicMenu();
   if(!ws || ws.hidden) return;
   const cards = ws.querySelector('.cards');
   if(!cards) return;
+  const buttons = [...cards.querySelectorAll('button.module-card')];
+  const existing = buttons.find(btn => (btn.textContent || '').includes('TEMA 7'));
+  if(existing){
+    existing.onclick = () => session('TEMA 7', topic7Curated);
+    return;
+  }
   const button = document.createElement('button');
   button.className = 'module-card';
   button.type = 'button';
