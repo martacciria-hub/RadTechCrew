@@ -34,3 +34,15 @@ const topic6Curated=[
 ['¿Qué afirmación diferencia correctamente profundidad de color y resolución?',['La profundidad de color se refiere a los colores representables por píxel y la resolución a la densidad de píxeles','Ambas expresan el número de colores por píxel','La resolución expresa siempre el tamaño del archivo','La profundidad de color indica exclusivamente el número total de píxeles'],0,'TEMA 6','difícil']
 ];
 const topic6Specific=topic6Curated;
+
+// Integración aislada del TEMA 6: se ejecuta después de tests-bank.js y solo amplía el menú por temas.
+const topic6MenuOverride=()=>{
+  const generated=[...buildTopicBank(),...topic1Curated,...topic2Curated,...topic3Curated,...topic4Specific,...topic5Specific,...topicSpecific,...topic6Curated];
+  const byTopic={};
+  generated.forEach(q=>(byTopic[q[3]]??=[]).push(q));
+  const entries=Object.keys(byTopic).sort((a,b)=>+a.split(' ')[1]-+b.split(' ')[1]);
+  ws.hidden=false;
+  ws.innerHTML=`<div class="study-material"><p class="eyebrow">TEST POR TEMAS</p><h2>📚 Elige un tema</h2><p>Cada tema tiene un banco propio de preguntas generado a partir del contenido real. El número disponible aparece en cada tarjeta.</p><div class="cards">${entries.map((n,i)=>`<button class="module-card" data-topic="${i}"><span class="module-number">${n}</span><h3>${esc((topics[n.split(' ')[1]]||{}).title||n)}</h3><p>${byTopic[n].length} preguntas disponibles</p><span class="module-action">Entrenar →</span></button>`).join('')}</div></div>`;
+  ws.querySelectorAll('[data-topic]').forEach((b,i)=>b.onclick=()=>session(entries[i],byTopic[entries[i]]));
+};
+topicMenu=topic6MenuOverride;
