@@ -1,25 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById('profile-content');
-  if (!root) return;
-
-  root.innerHTML = `
-    <div class="profile-hero profile-personal">
-      <div class="profile-avatar-large">
-        <div class="avatar-drawing avatar-chica skin-medio hair-castano" aria-label="Avatar de técnico de radiología">
-          <div class="avatar-hair"></div>
-          <div class="avatar-face">
-            <span class="avatar-eyes">••</span>
-            <span class="avatar-mouth">⌣</span>
-          </div>
-          <div class="avatar-body">✚</div>
-        </div>
-      </div>
-      <div class="profile-hero-text">
-        <p class="eyebrow">MI PERFIL</p>
-        <h2>Hola, Marta 👋</h2>
-        <p class="profile-sub">Técnico/a en entrenamiento</p>
-        <button id="profile-edit" class="profile-button" type="button">✏️ Editar perfil</button>
-      </div>
-    </div>
-  `;
+document.addEventListener('DOMContentLoaded',()=>{
+ const root=document.getElementById('profile-content'); if(!root)return;
+ const PROFILE_KEY='radtechcrew_profile';
+ const STATS_KEY='radtech_tests_v2';
+ const defaults={name:'',goal:'',base:'chica',skin:'medio',hair:'castano',accessory:'ninguno'};
+ const options={base:[['chico','👨🏻‍⚕️','Chico'],['chica','👩🏻‍⚕️','Chica'],['chique','🧑🏻‍⚕️','Chique']],skin:[['claro','Claro'],['medio','Medio'],['moreno','Moreno'],['oscuro','Oscuro']],hair:[['castano','Castaño'],['rubio','Rubio'],['negro','Negro'],['pelirrojo','Pelirrojo']],accessory:[['ninguno','Ninguno'],['gafas','Gafas'],['auriculares','Auriculares'],['diadema','Diadema']]};
+ const read=()=>{try{return {...defaults,...JSON.parse(localStorage.getItem(PROFILE_KEY)||'{}')}}catch{return {...defaults}}};
+ const write=p=>localStorage.setItem(PROFILE_KEY,JSON.stringify(p));
+ const stats=()=>{try{const d=JSON.parse(localStorage.getItem(STATS_KEY)||'{}'),s=d.stats||{},answered=s.answered||0,correct=s.correct||0;return {answered,correct,rate:answered?Math.round(correct/answered*100):0,errors:Object.keys(d.errors||{}).filter(k=>(d.errors||{})[k]>0).length,xp:answered*10+correct*5}}catch{return {answered:0,correct:0,rate:0,errors:0,xp:0}}};
+ const esc=s=>String(s||'').replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));
+ const avatar=p=>`<div class="avatar-drawing avatar-${p.base} skin-${p.skin} hair-${p.hair}"><div class="avatar-hair"></div><div class="avatar-face"><span class="avatar-eyes">••</span><span class="avatar-mouth">⌣</span></div><div class="avatar-body">✚</div>${p.accessory!=='ninguno'?`<div class="avatar-accessory accessory-${p.accessory}">${p.accessory==='gafas'?'◉‿◉':p.accessory==='auriculares'?'◖◗':'⌒'}</div>`:''}</div>`;
+ const render=()=>{
+  const p=read(),s=stats(),level=Math.floor(s.xp/500)+1,pct=Math.min(100,Math.round((s.xp%500)/500*100)),has=!!p.name;
+  root.innerHTML=`<div class="profile-hero profile-personal"><div class="profile-avatar-large">${avatar(p)}</div><div class="profile-hero-text"><p class="eyebrow">TU ESPACIO EN RADTECHCREW</p><h2>${has?`¡Hola, ${esc(p.name)}!`:'¡Crea tu perfil!'}</h2><p class="profile-sub">${has?(p.goal?esc(p.goal):'Tu espacio de entrenamiento está listo.'):'Haz que RadTechCrew sea un poco más tuyo.'}</p><button id="profile-edit" class="profile-button" type="button">✏️ ${has?'Modificar mi perfil':'Crear mi perfil'}</button></div></div>
+  <div class="profile-stats profile-grid"><div class="profile-stat"><span>🧠</span><strong>${s.answered}</strong><small>Preguntas respondidas</small></div><div class="profile-stat"><span>🎯</span><strong>${s.rate}%</strong><small>Precisión global</small></div><div class="profile-stat"><span>⭐</span><strong>${s.xp}</strong><small>XP acumulados</small></div><div class="profile-stat"><span>🏅</span><strong>Nivel ${level}</strong><small>${s.errors} errores pendientes</small></div></div>
+  <div class="profile-progress"><div class="profile-progress-head"><div><p class="eyebrow">TU PROGRESO</p><h3>Nivel ${level} · Técnico/a en entrenamiento</h3></div><strong>${s.xp} XP</strong></div><div class="xp-track"><span style="width:${pct}%"></span></div><p>${s.xp%500} / 500 XP para el siguiente nivel</p></div>
+  <div id="profile-editor" class="profile-editor" hidden><div class="profile-editor-card"><div class="editor-head"><div><p class="eyebrow">PERSONALIZA TU PERFIL</p><h3>${has?'Modificar mi perfil':'Crear mi perfil'}</h3></div><button id="profile-close" class="profile-close" type="button">×</button></div><div class="editor-preview">${avatar(p)}<div><strong>Así se verá tu personaje</strong><small>Elige las opciones que más te gusten.</small></div></div><label>Nombre o apodo<input id="profile-name" maxlength="30" value="${esc(p.name)}" placeholder="¿Cómo quieres que te llamemos?"></label><label>Tu objetivo<input id="profile-goal" maxlength="70" value="${esc(p.goal)}" placeholder="Ej.: conseguir mi plaza 🏆"></label><div class="choice-section"><strong>Personaje</strong><div class="choice-grid">${options.base.map(([v,e,l])=>`<button type="button" class="choice ${p.base===v?'selected':''}" data-kind="base" data-value="${v}"><span>${e}</span><small>${l}</small></button>`).join('')}</div></div><div class="choice-section"><strong>Tono de piel</strong><div class="choice-grid compact">${options.skin.map(([v,l])=>`<button type="button" class="choice ${p.skin===v?'selected':''}" data-kind="skin" data-value="${v}"><span class="skin-dot skin-${v}"></span><small>${l}</small></button>`).join('')}</div></div><div class="choice-section"><strong>Pelo</strong><div class="choice-grid compact">${options.hair.map(([v,l])=>`<button type="button" class="choice ${p.hair===v?'selected':''}" data-kind="hair" data-value="${v}"><span class="hair-dot hair-${v}"></span><small>${l}</small></button>`).join('')}</div></div><div class="choice-section"><strong>Accesorio</strong><div class="choice-grid compact">${options.accessory.map(([v,l])=>`<button type="button" class="choice ${p.accessory===v?'selected':''}" data-kind="accessory" data-value="${v}"><span>${v==='ninguno'?'✦':v==='gafas'?'👓':v==='auriculares'?'🎧':'🎀'}</span><small>${l}</small></button>`).join('')}</div></div><div class="editor-actions"><button id="profile-cancel" class="profile-secondary" type="button">Cancelar</button><button id="profile-save" class="profile-button" type="button">Guardar perfil</button></div></div></div>`;
+  const editor=root.querySelector('#profile-editor');
+  root.querySelector('#profile-edit').onclick=()=>{editor.hidden=false;root.querySelector('#profile-name').focus()};
+  const close=()=>editor.hidden=true; root.querySelector('#profile-close').onclick=close;root.querySelector('#profile-cancel').onclick=close;
+  root.querySelectorAll('[data-kind]').forEach(btn=>btn.onclick=()=>{root.querySelectorAll(`[data-kind="${btn.dataset.kind}"]`).forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');});
+  root.querySelector('#profile-save').onclick=()=>{const next={name:root.querySelector('#profile-name').value.trim(),goal:root.querySelector('#profile-goal').value.trim(),base:root.querySelector('[data-kind="base"].selected')?.dataset.value||p.base,skin:root.querySelector('[data-kind="skin"].selected')?.dataset.value||p.skin,hair:root.querySelector('[data-kind="hair"].selected')?.dataset.value||p.hair,accessory:root.querySelector('[data-kind="accessory"].selected')?.dataset.value||p.accessory};write(next);render()};
+ };
+ render(); window.addEventListener('storage',render);document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});
 });
