@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
   const root = document.getElementById('profile-content');
   if (!root) return;
 
@@ -12,4 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
   `;
-});
+})();
