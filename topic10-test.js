@@ -24,7 +24,6 @@ const topic10Curated = [
 
 window.topic10Curated = topic10Curated;
 
-// Sustituye únicamente la tarjeta reservada del TEMA 10.
 const previousTopicMenu10 = window.topicMenu;
 window.topicMenu = function(){
   previousTopicMenu10();
@@ -38,4 +37,15 @@ window.topicMenu = function(){
     existing.onclick = () => session('TEMA 10', topic10Curated);
     return;
   }
+  const button = document.createElement('button');
+  button.className = 'module-card';
+  button.type = 'button';
+  button.disabled = false;
+  button.innerHTML = `<span class="module-number">TEMA 10</span><h3>${esc((topics[10]||{}).title||'TEMA 10')}</h3><p>${topic10Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
+  button.onclick = () => session('TEMA 10', topic10Curated);
+  const before = [...cards.querySelectorAll('button.module-card')].find(b => {
+    const m = (b.textContent || '').match(/TEMA\s+(\d+)/);
+    return m && Number(m[1]) > 10;
+  });
+  if(before) cards.insertBefore(button, before); else cards.appendChild(button);
 };
