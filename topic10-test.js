@@ -1,7 +1,30 @@
-// Hueco reservado para el test del TEMA 10.
-const topic10Curated = [];
+// Banco curado del TEMA 10.
+const topic10Curated = [
+  ['¿Qué se entiende por proceso radiológico?',['El conjunto de técnicas utilizadas exclusivamente para obtener imágenes radiográficas.','Una serie de actividades estructuradas que permiten obtener información con valor añadido para mejorar la atención al paciente.','El procedimiento mediante el cual el radiólogo establece un diagnóstico.','El conjunto de sistemas informáticos utilizados en un servicio de radiología.'],1,'TEMA 10','fácil'],
+  ['En el proceso radiológico, la obtención de una imagen debe entenderse como:',['Una actividad aislada cuyo objetivo final es almacenar la imagen.','El último paso antes de finalizar la atención al paciente.','Una actividad integrada en un proceso que comienza con una petición y cuya información puede contribuir al diagnóstico y tratamiento.','Una actividad independiente de la información clínica del paciente.'],2,'TEMA 10','fácil'],
+  ['¿Qué caracteriza a la ingeniería de un proceso radiológico?',['La modificación de un proceso que ya se encuentra implantado.','La puesta en marcha del proceso definiendo acciones y roles del personal.','La sustitución de los sistemas analógicos por sistemas digitales.','La evaluación de los resultados obtenidos tras la implantación.'],1,'TEMA 10','fácil'],
+  ['La reingeniería de un proceso consiste en:',['Diseñar por primera vez las actividades y responsabilidades del proceso.','Actuar y realizar modificaciones sobre un proceso previamente definido.','Instalar exclusivamente nuevos equipos de adquisición.','Sustituir al personal que participa en el proceso.'],1,'TEMA 10','fácil'],
+  ['Un servicio de radiología incorpora nuevas modalidades, RIS y PACS. ¿Qué circunstancia puede hacer necesaria una reingeniería del proceso?',['Que la tecnología no tenga ninguna repercusión sobre la organización del trabajo.','Que los cambios tecnológicos obliguen a revisar y adaptar el proceso existente.','Que el proceso radiológico deba mantenerse exactamente igual.','Que únicamente sea necesario cambiar los equipos informáticos.'],1,'TEMA 10','medio'],
+  ['¿Cuál de las siguientes opciones representa mejor la relación entre ingeniería y reingeniería?',['La ingeniería modifica un proceso existente y la reingeniería lo inicia.','Ambas expresiones hacen referencia al mismo procedimiento.','La ingeniería pone en marcha y estructura el proceso; la reingeniería permite modificarlo posteriormente.','La ingeniería corresponde al RIS y la reingeniería al PACS.'],2,'TEMA 10','medio'],
+  ['¿Cuál es la primera actuación dentro de las fases de reingeniería descritas?',['Gestionar el cambio tecnológico.','Diseñar el nuevo proceso.','Analizar el sistema antiguo.','Evaluar las mejoras obtenidas.'],2,'TEMA 10','fácil'],
+  ['Tras analizar el sistema antiguo, ¿qué aspecto debe estudiarse antes de diseñar el nuevo proceso?',['El cambio tecnológico.','Únicamente la formación del personal.','Exclusivamente los datos maestros.','Los resultados de la evaluación final.'],0,'TEMA 10','medio'],
+  ['¿Cuál de las siguientes secuencias corresponde al desarrollo correcto de la reingeniería?',['Sistema antiguo → cambio tecnológico → nuevo proceso → gestión del cambio → evaluación.','Cambio tecnológico → sistema antiguo → gestión del cambio → nuevo proceso → evaluación.','Sistema antiguo → nuevo proceso → cambio tecnológico → evaluación → gestión del cambio.','Nuevo proceso → sistema antiguo → cambio tecnológico → gestión del cambio → evaluación.'],0,'TEMA 10','medio'],
+  ['Durante el análisis del cambio tecnológico de un servicio de radiología, ¿qué elementos deben considerarse?',['Únicamente las características del PACS.','Los avances en las modalidades y la introducción de sistemas como RIS, PACS y DICOM.','Exclusivamente las necesidades de formación del personal.','Únicamente el hardware de los equipos de radiografía convencional.'],1,'TEMA 10','medio'],
+  ['¿Cuál de las siguientes actuaciones pertenece específicamente a la fase de gestión del cambio?',['Analizar el sistema antiguo.','Diseñar el nuevo proceso.','Instalar y adecuar los sistemas informáticos y el hardware asociado.','Determinar la necesidad de realizar una reingeniería.'],2,'TEMA 10','medio'],
+  ['La introducción de datos maestros dentro de la reingeniería del proceso radiológico se incluye en:',['El análisis del sistema antiguo.','El análisis del cambio tecnológico.','El diseño del nuevo proceso.','La gestión del cambio.'],3,'TEMA 10','medio'],
+  ['¿Cuál de las siguientes actuaciones contribuye a facilitar la adaptación del personal a un nuevo proceso radiológico?',['Evitar comunicar los cambios hasta que estén completamente implantados.','Establecer un plan de comunicación y formación.','Mantener los procedimientos antiguos sin modificaciones.','Prescindir de la formación si se dispone de sistemas automatizados.'],1,'TEMA 10','fácil'],
+  ['Durante la implantación de un nuevo sistema informático en radiología, ¿cuál de las siguientes actuaciones es adecuada?',['Instalar el sistema y asumir que funcionará correctamente sin comprobaciones.','Adecuar los sistemas informáticos y el hardware asociado y asegurarse de su correcto funcionamiento.','Eliminar inmediatamente todos los sistemas anteriores sin planificación.','Posponer la formación del personal indefinidamente.'],1,'TEMA 10','medio'],
+  ['¿Cuál de las siguientes afirmaciones sobre la evaluación del proceso radiológico es correcta?',['Se realiza únicamente antes de iniciar la reingeniería.','Constituye la fase final y debe permitir introducir mejoras continuas.','Sustituye al análisis del cambio tecnológico.','Tiene como objetivo impedir modificaciones posteriores del proceso.'],1,'TEMA 10','fácil'],
+  ['Un servicio ha implantado un nuevo sistema RIS/PACS y, después de su puesta en funcionamiento, analiza los resultados y detecta aspectos que deben modificarse. ¿En qué fase se encuentra?',['Análisis del sistema antiguo.','Diseño del nuevo proceso.','Gestión del cambio.','Evaluación y mejoras continuas.'],3,'TEMA 10','medio'],
+  ['¿Cuál de las siguientes situaciones refleja mejor la necesidad de una reingeniería del proceso radiológico?',['Mantener un proceso diseñado para sistemas analógicos pese a la incorporación de tecnologías digitales.','Mantener sin cambios un proceso que funciona correctamente y no ha sufrido ninguna modificación tecnológica.','Realizar una exploración siguiendo un protocolo establecido.','Registrar una petición radiológica antes de realizar una exploración.'],0,'TEMA 10','medio'],
+  ['En un proceso de transformación tecnológica, ¿cuál de las siguientes actuaciones NO corresponde a la gestión del cambio?',['Introducción de datos maestros.','Plan de comunicación y formación.','Adecuación de los sistemas informáticos y hardware asociado.','Análisis del sistema antiguo.'],3,'TEMA 10','medio'],
+  ['Un hospital pretende incorporar una nueva modalidad y modificar la organización del trabajo que ya tiene establecida. ¿Qué actuación resulta más adecuada?',['Mantener necesariamente el proceso existente porque ya está definido.','Realizar una reingeniería que permita adaptar el proceso a la nueva situación tecnológica.','Limitarse a instalar el nuevo equipo sin modificar el proceso.','Sustituir la fase de evaluación por una nueva fase de ingeniería.'],1,'TEMA 10','medio'],
+  ['¿Cuál de las siguientes opciones resume mejor el objetivo de la reingeniería del proceso radiológico?',['Sustituir al personal por sistemas informáticos.','Incorporar tecnología sin modificar la organización existente.','Adaptar y mejorar un proceso previamente definido ante los cambios tecnológicos y organizativos.','Limitar el proceso radiológico a la adquisición y almacenamiento de imágenes.'],2,'TEMA 10','medio']
+];
+
 window.topic10Curated = topic10Curated;
 
+// Sustituye únicamente la tarjeta reservada del TEMA 10.
 const previousTopicMenu10 = window.topicMenu;
 window.topicMenu = function(){
   previousTopicMenu10();
@@ -9,15 +32,10 @@ window.topicMenu = function(){
   const cards = ws.querySelector('.cards');
   if(!cards) return;
   const existing = [...cards.querySelectorAll('button.module-card')].find(b => (b.textContent || '').includes('TEMA 10'));
-  if(existing) return;
-  const button = document.createElement('button');
-  button.className = 'module-card';
-  button.type = 'button';
-  button.disabled = true;
-  button.innerHTML = `<span class="module-number">TEMA 10</span><h3>${esc((topics[10]||{}).title||'TEMA 10')}</h3><p>0 preguntas · en preparación</p><span class="module-action">Próximamente</span>`;
-  const before = [...cards.querySelectorAll('button.module-card')].find(b => {
-    const m = (b.textContent || '').match(/TEMA\s+(\d+)/);
-    return m && Number(m[1]) > 10;
-  });
-  if(before) cards.insertBefore(button, before); else cards.appendChild(button);
+  if(existing){
+    existing.disabled = false;
+    existing.innerHTML = `<span class="module-number">TEMA 10</span><h3>${esc((topics[10]||{}).title||'TEMA 10')}</h3><p>${topic10Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
+    existing.onclick = () => session('TEMA 10', topic10Curated);
+    return;
+  }
 };
