@@ -1,0 +1,62 @@
+// Test curado del TEMA 39 · EXPLORACIÓN ECOGRÁFICA DEL APARATO GENITAL MASCULINO
+const topic39Curated = [
+  ["¿Cuál de las siguientes estructuras NO forma parte del contenido habitual de cada hemiescroto?", ["Testículo", "Epidídimo", "Conducto deferente", "Vesícula seminal"], 3, "TEMA 39", "fácil"],
+  ["¿Cuál es el orden correcto de las capas del escroto desde la superficie hacia la profundidad?", ["Piel → dartos → tejido celular subcutáneo → fascia espermática externa → cremáster → fascia espermática interna → túnica vaginal", "Piel → tejido celular subcutáneo → dartos → cremáster → fascia espermática externa → túnica vaginal → fascia espermática interna", "Piel → dartos → fascia espermática externa → tejido celular subcutáneo → cremáster → fascia espermática interna → túnica vaginal", "Piel → dartos → tejido celular subcutáneo → cremáster → fascia espermática interna → fascia espermática externa → túnica vaginal"], 0, "TEMA 39", "difícil"],
+  ["La túnica vaginal deriva embriológicamente de:", ["La túnica albugínea", "El proceso vaginal del peritoneo", "El conducto deferente", "El mesodermo de la cresta gonadal"], 1, "TEMA 39", "medio"],
+  ["¿Cuál de las siguientes afirmaciones sobre la túnica vaginal es correcta?", ["Recubre completamente el testículo, incluida su unión posterior", "Está formada exclusivamente por una capa visceral", "Presenta una hoja visceral y otra parietal que delimitan un espacio virtual", "Se encuentra en el interior de la túnica albugínea"], 2, "TEMA 39", "difícil"],
+  ["La túnica albugínea del testículo:", ["Es una cubierta muscular que produce el cremáster", "Emite tabiques hacia el interior que convergen posteriormente formando el mediastino testicular", "Recubre únicamente el epidídimo", "Forma directamente los túbulos seminíferos"], 1, "TEMA 39", "medio"],
+  ["Los túbulos seminíferos del testículo:", ["Desembocan directamente en el conducto deferente", "Se agrupan en lobulillos y convergen hacia la rete testis", "Se localizan exclusivamente en el mediastino", "Constituyen la túnica vaginal"], 1, "TEMA 39", "medio"],
+  ["¿Cuál es la localización característica del epidídimo?", ["Anterior al testículo", "Medial al testículo", "Posterolateral al testículo", "Inferior y separado del testículo"], 2, "TEMA 39", "fácil"],
+  ["Respecto al epidídimo, señale la asociación correcta:", ["Cabeza: 2–4 mm; cuerpo: 5–12 mm", "Cabeza: 5–12 mm; cuerpo: 2–4 mm", "Cabeza: 10–20 mm; cuerpo: 5–12 mm", "Cabeza y cuerpo: ambos aproximadamente 1 cm"], 1, "TEMA 39", "medio"],
+  ["¿Cuál de los siguientes elementos forma parte del cordón espermático?", ["Plexo venoso pampiniforme", "Vesícula seminal", "Próstata", "Conducto eyaculador exclusivamente"], 0, "TEMA 39", "fácil"],
+  ["La arteria testicular se origina habitualmente de:", ["La arteria ilíaca externa", "La arteria femoral", "La aorta", "La arteria epigástrica inferior"], 2, "TEMA 39", "medio"],
+  ["Para una exploración ecográfica escrotal convencional, el transductor de elección es:", ["Convexo de 2–5 MHz", "Lineal de alta frecuencia, aproximadamente 7–14 MHz", "Sectorial de 1–3 MHz", "Endocavitario exclusivamente"], 1, "TEMA 39", "fácil"],
+  ["En un estudio Doppler escrotal en el que se sospecha un flujo muy lento o escaso, ¿qué actuación es más adecuada si inicialmente no se detecta flujo?", ["Aumentar el PRF y disminuir la ganancia", "Aumentar la ganancia y disminuir el PRF", "Aumentar simultáneamente el PRF y el filtro de pared", "Comprimir con fuerza el testículo para mejorar la señal"], 1, "TEMA 39", "difícil"],
+  ["Para comparar correctamente la vascularización de ambos testículos mediante Doppler:", ["Deben utilizarse parámetros diferentes para cada testículo", "Se debe comenzar siempre por el testículo sintomático", "Es conveniente utilizar una ventana doble manteniendo los mismos parámetros Doppler", "Solo debe utilizarse Doppler espectral en el testículo afectado"], 2, "TEMA 39", "difícil"],
+  ["¿Cuál de las siguientes medidas corresponde a un tamaño aproximado normal del testículo adulto?", ["1–2 cm de longitud", "3–5 cm de longitud", "6–8 cm de longitud", "8–10 cm de longitud"], 1, "TEMA 39", "fácil"],
+  ["El mediastino testicular se identifica ecográficamente como:", ["Una banda hiperecogénica de disposición craneocaudal", "Una lesión anecoica redondeada", "Una banda hipoecoica transversal que divide el testículo", "Una estructura exclusivamente visible mediante Doppler"], 0, "TEMA 39", "medio"],
+  ["La rete testis puede identificarse ecográficamente:", ["En todos los individuos como una estructura anecoica", "Hasta aproximadamente en un 18% de los casos, adyacente al mediastino", "Únicamente en pacientes con hidrocele", "Solo mediante Doppler color"], 1, "TEMA 39", "difícil"],
+  ["Una pequeña cantidad de líquido anecoico situada entre las hojas de la túnica vaginal, cerca de la cabeza del epidídimo, debe interpretarse como:", ["Hidrocele obligatoriamente", "Hallazgo que puede ser fisiológico", "Hematocele", "Piocele"], 1, "TEMA 39", "medio"],
+  ["¿Cuál de las siguientes características es más propia de un quiste testicular simple?", ["Lesión sólida hipoecoica con vascularización interna", "Lesión redondeada anecoica con refuerzo acústico posterior", "Lesión hiperecogénica con sombra posterior", "Lesión heterogénea con flujo periférico intenso"], 1, "TEMA 39", "fácil"],
+  ["La ectasia de la rete testis se relaciona principalmente con:", ["Una dilatación secundaria a obstrucción parcial o completa de la vía espermática", "Una infección aguda del epidídimo", "Una torsión del cordón espermático", "Una malformación exclusiva de la túnica vaginal"], 0, "TEMA 39", "difícil"],
+  ["¿Cuál de las siguientes imágenes ecográficas es característica de un tumor epidermoide testicular?", ["Patrón de anillos concéntricos alternando capas hipoecoicas e hiperecogénicas", "Patrón exclusivamente anecoico con refuerzo posterior", "Masa homogéneamente hiperecogénica con flujo central", "Calcificación única con sombra acústica limpia"], 0, "TEMA 39", "difícil"],
+  ["En la microlitiasis testicular, se consideran anormales:", ["Cualquier foco hiperecogénico aislado", "Al menos cinco focos micrométricos hiperecogénicos", "Únicamente las calcificaciones con sombra posterior", "Solo las calcificaciones superiores a 1 cm"], 1, "TEMA 39", "medio"],
+  ["¿Cuál es el patrón ecográfico más habitual de un tumor testicular maligno?", ["Masa anecoica con refuerzo posterior y ausencia de vascularización", "Masa generalmente hipoecoica, de límites mal definidos y con vascularización interna", "Masa exclusivamente hiperecogénica con sombra posterior", "Engrosamiento difuso de la túnica vaginal sin alteración del parénquima"], 1, "TEMA 39", "medio"],
+  ["En una epididimitis, ¿qué combinación de hallazgos es más característica?", ["Disminución del flujo epididimario y testicular", "Aumento del flujo Doppler, aumento del epidídimo y posible hidrocele reactivo", "Ausencia completa de vascularización desde el inicio", "Calcificación difusa de ambos testículos"], 1, "TEMA 39", "difícil"],
+  ["En la epididimitis, la afectación suele comenzar:", ["En la cabeza del epidídimo y avanzar hacia la cola", "En la cola del epidídimo y extenderse hacia cuerpo y cabeza", "Simultáneamente en testículo y epidídimo", "En el conducto deferente y posteriormente en la cabeza"], 1, "TEMA 39", "difícil"],
+  ["En una torsión testicular aguda, el cambio vascular que suele aparecer inicialmente es:", ["Desaparición del flujo arterial antes que el venoso", "Aumento del flujo arterial con desaparición del venoso", "Desaparición del flujo venoso antes que el arterial", "Aumento simultáneo del flujo arterial y venoso"], 2, "TEMA 39", "difícil"],
+  ["Ante una sospecha de torsión testicular, ¿qué hallazgo del cordón espermático es especialmente específico?", ["Signo del doble contorno", "Signo del whirlpool o remolino", "Signo del refuerzo posterior", "Signo de la cola de cometa"], 1, "TEMA 39", "difícil"],
+  ["En una torsión testicular intermitente que se ha resuelto espontáneamente, el Doppler puede mostrar:", ["Ausencia permanente de flujo arterial", "Aumento del flujo intratesticular por reperfusión", "Calcificación inmediata del testículo", "Hidrocele sin cambios vasculares"], 1, "TEMA 39", "difícil"],
+  ["Ante la torsión de un apéndice testicular, ¿cuál es la finalidad principal de la ecografía?", ["Confirmar siempre la necrosis del apéndice", "Demostrar una tumoración testicular maligna", "Descartar torsión testicular y orquiepididimitis", "Medir exclusivamente el volumen testicular"], 2, "TEMA 39", "difícil"],
+  ["Tras un traumatismo escrotal, ¿qué hallazgo obliga especialmente a valorar una rotura testicular?", ["Pequeña cantidad de líquido anecoico", "Discontinuidad de la túnica albugínea con irregularidad del contorno testicular", "Engrosamiento leve del escroto", "Aumento transitorio del flujo periférico"], 1, "TEMA 39", "difícil"],
+  ["¿Cuál de las siguientes asociaciones es correcta respecto a las lesiones postraumáticas?", ["Hematoma agudo: típicamente anecoico desde el inicio", "Hematocele: colección compleja con septos o compartimentos internos", "Hidrocele: colección exclusivamente sólida", "Hematoma tardío: siempre hiperecogénico"], 1, "TEMA 39", "difícil"],
+  ["¿Cuál es el tumor benigno más frecuente del epidídimo?", ["Adenomatoide", "Seminoma", "Epidermoide", "Tumor de células germinales no seminomatoso"], 0, "TEMA 39", "medio"],
+  ["¿Qué característica es más típica de un varicocele?", ["Dilatación de las venas del plexo pampiniforme, habitualmente más frecuente en el lado izquierdo", "Dilatación de la arteria testicular, habitualmente derecha", "Colección líquida alrededor del testículo", "Calcificaciones libres dentro de la túnica albugínea"], 0, "TEMA 39", "medio"],
+  ["Durante la valoración ecográfica de un varicocele, la maniobra que puede aumentar su demostración es:", ["Valsalva", "Hiperventilación", "Compresión testicular mantenida", "Maniobra de Trendelenburg exclusivamente"], 0, "TEMA 39", "fácil"],
+  ["En la hiperplasia benigna de próstata, ¿cuál de las siguientes combinaciones es correcta?", ["Aumenta el diámetro transversal y disminuyen los demás", "Aumentan los diámetros anteroposterior y longitudinal, pudiendo producir impresión sobre la base vesical", "Disminuyen todos los diámetros prostáticos", "El crecimiento prostático no puede producir residuo postmiccional"], 1, "TEMA 39", "difícil"],
+  ["Respecto a la ecografía prostática, ¿cuál de las siguientes afirmaciones es correcta?", ["La vía suprapúbica permite valorar con gran resolución la anatomía zonal y detectar pequeños tumores", "La vía transrectal se realiza habitualmente con el paciente en decúbito prono", "La ecografía suprapúbica permite estimar el volumen prostático y valorar el residuo postmiccional, mientras que la transrectal ofrece mayor detalle anatómico", "La vía transrectal no se utiliza como guía para procedimientos como la biopsia"], 2, "TEMA 39", "difícil"]
+];
+
+window.topic39Curated = topic39Curated;
+
+const previousTopicMenu39 = window.topicMenu;
+window.topicMenu = function(){
+  previousTopicMenu39();
+  if(!ws || ws.hidden) return;
+  const cards = ws.querySelector('.cards');
+  if(!cards) return;
+  const existing = [...cards.querySelectorAll('button.module-card')].find(b => (b.textContent || '').includes('TEMA 39'));
+  if(existing){
+    existing.disabled = false;
+    existing.innerHTML = `<span class="module-number">TEMA 39</span><h3>${esc((topics[39]||{}).title||'TEMA 39')}</h3><p>${topic39Curated.length} preguntas · genital masculino</p><span class="module-action">Entrenar →</span>`;
+    existing.onclick = () => session('TEMA 39', topic39Curated);
+    return;
+  }
+  const button = document.createElement('button');
+  button.className = 'module-card';
+  button.type = 'button';
+  button.innerHTML = `<span class="module-number">TEMA 39</span><h3>${esc((topics[39]||{}).title||'TEMA 39')}</h3><p>${topic39Curated.length} preguntas · genital masculino</p><span class="module-action">Entrenar →</span>`;
+  button.onclick = () => session('TEMA 39', topic39Curated);
+  const before = [...cards.querySelectorAll('button.module-card')].find(b => { const m=(b.textContent||'').match(/TEMA\s+(\d+)/); return m && Number(m[1]) > 39; });
+  if(before) cards.insertBefore(button,before); else cards.appendChild(button);
+};
