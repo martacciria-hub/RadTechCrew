@@ -41,6 +41,7 @@ const topic25Curated = [
   {q:'En una pregunta de examen, se relacionan cuatro elementos. ¿Cuál es la relación correcta?',a:['Mediastino → espacio entre pulmones; pleura visceral → pulmón; PA → estándar; lordótica → ápices','Mediastino → cavidad pleural; pleura visceral → pared; PA → encamado; lordótica → esternón','Mediastino → abdomen; pleura visceral → diafragma; PA → neumotórax; lordótica → corazón','Mediastino → pulmón derecho; pleura visceral → costillas; PA → lateral; lordótica → derrame'],c:0}
 ];
 window.topic25Curated = topic25Curated;
+const topic25Session = topic25Curated.map(x=>[x.q,x.a,x.c,'TEMA 25','medio']);
 const previousTopicMenu25 = window.topicMenu;
 window.topicMenu = function(){
   previousTopicMenu25();
@@ -51,7 +52,7 @@ window.topicMenu = function(){
   const setCard = b => {
     b.disabled=false;
     b.innerHTML=`<span class="module-number">TEMA 25</span><h3>${esc((topics[25]||{}).title||'TEMA 25')}</h3><p>${topic25Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
-    b.onclick=()=>session('TEMA 25',topic25Curated);
+    b.onclick=()=>session('TEMA 25',topic25Session);
   };
   if(existing){ setCard(existing); return; }
   const button=document.createElement('button');
