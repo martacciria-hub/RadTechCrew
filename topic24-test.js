@@ -42,11 +42,15 @@ window.topicMenu = function(){
   if(!ws || ws.hidden) return;
   const cards = ws.querySelector('.cards');
   if(!cards) return;
-  if([...cards.querySelectorAll('button.module-card')].some(b=>(b.textContent||'').includes('TEMA 24'))) return;
+  const existing = [...cards.querySelectorAll('button.module-card')].find(b=>(b.textContent||'').includes('TEMA 24'));
+  const setCard = b => {
+    b.disabled=false;
+    b.innerHTML=`<span class="module-number">TEMA 24</span><h3>${esc((topics[24]||{}).title||'TEMA 24')}</h3><p>${topic24Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
+    b.onclick=()=>session('TEMA 24',topic24Curated);
+  };
+  if(existing){ setCard(existing); return; }
   const button=document.createElement('button');
-  button.className='module-card'; button.type='button';
-  button.innerHTML=`<span class="module-number">TEMA 24</span><h3>${esc((topics[24]||{}).title||'TEMA 24')}</h3><p>${topic24Curated.length} preguntas disponibles</p><span class="module-action">Empezar →</span>`;
-  button.onclick=()=>session('TEMA 24',topic24Curated);
+  button.className='module-card'; button.type='button'; setCard(button);
   const before=[...cards.querySelectorAll('button.module-card')].find(b=>{const m=(b.textContent||'').match(/TEMA\s+(\d+)/);return m&&Number(m[1])>24;});
   if(before) cards.insertBefore(button,before); else cards.appendChild(button);
 };
