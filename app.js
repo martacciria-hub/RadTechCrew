@@ -27,7 +27,7 @@ moduleViewContent.className = 'module-topics';
 moduleView.appendChild(moduleViewContent);
 
 function renderModuleTopics(moduleNumber) {
-  const moduleTopics = moduleNumber === 1 ? [1, 2, 3] : moduleNumber === 5 ? [35, 36, 37, 38, 39, 40] : [];
+  const moduleTopics = moduleNumber === 1 ? [1, 2, 3] : moduleNumber === 5 ? [35, 36, 37, 38, 39, 40, 41] : [];
   if (!moduleTopics.length) return '<div class="coming-soon">📚 Los temas de este módulo se incorporarán aquí.</div>';
   return `<div class="topic-list">${moduleTopics.map(topicNumber => `
     <button class="topic-card" type="button" data-topic="${topicNumber}">
