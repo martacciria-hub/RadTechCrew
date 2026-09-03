@@ -36,6 +36,7 @@ const topic23Curated = [
   {q:'Un paciente necesita una exploración convencional de cráneo y se quiere seleccionar la proyección en función de la estructura de interés. ¿Cuál de las siguientes secuencias es completamente correcta?',a:['Silla turca → lateral / occipital → Towne / senos paranasales → Waters','Silla turca → Waters / occipital → Schüller / senos → Towne','Silla turca → Hirtz / occipital → Caldwell / senos → Mahoney','Silla turca → Towne / occipital → lateral / senos → Hirtz'],c:0}
 ];
 window.topic23Curated = topic23Curated;
+const topic23Session = topic23Curated.map(x=>[x.q,x.a,x.c,'TEMA 23','medio']);
 const previousTopicMenu23 = window.topicMenu;
 window.topicMenu = function(){
   previousTopicMenu23();
@@ -46,7 +47,7 @@ window.topicMenu = function(){
   const setCard = b => {
     b.disabled=false;
     b.innerHTML=`<span class="module-number">TEMA 23</span><h3>${esc((topics[23]||{}).title||'TEMA 23')}</h3><p>${topic23Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
-    b.onclick=()=>session('TEMA 23',topic23Curated);
+    b.onclick=()=>session('TEMA 23',topic23Session);
   };
   if(existing){ setCard(existing); return; }
   const button=document.createElement('button');
