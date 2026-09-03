@@ -35,21 +35,27 @@ const topic32Curated = [
 ["En la cistouretrografía miccional seriada (CUMS), el objetivo principal incluye valorar:",["Únicamente la vejiga","Vejiga, uretra y especialmente la existencia de reflujo vesicoureteral","Solo los riñones","Únicamente el uréter distal"],1,"TEMA 32","medio"],
 ["Se realiza una CUMS a un niño pequeño para estudiar un posible reflujo vesicoureteral. ¿Cuál de las siguientes combinaciones es la más correcta?",["Cateterización aséptica, contraste yodado, control fluoroscópico y valoración durante la micción","Catéter con balón de gran calibre, bario y radiografía única al finalizar","Contraste intravenoso y proyección AP exclusivamente","Sin cateterización, utilizando únicamente una radiografía simple"],0,"TEMA 32","difícil"]
 ];
+
 window.topic32Curated = topic32Curated;
-(function(){
-  const original = window.topicMenu;
-  if(typeof original !== 'function') return;
-  window.topicMenu = function(){
-    const result = original.apply(this, arguments);
-    setTimeout(function(){
-      const cards = document.querySelectorAll('.topic-card,.module-card,button');
-      cards.forEach(function(b){
-        if((b.textContent||'').includes('32') && !b.dataset.topic32Bound){
-          b.dataset.topic32Bound='1';
-          b.onclick=function(){ session('TEMA 32', topic32Curated); };
-        }
-      });
-    },0);
-    return result;
-  };
-})();
+
+const previousTopicMenu32 = window.topicMenu;
+window.topicMenu = function(){
+  previousTopicMenu32();
+  if(!ws || ws.hidden) return;
+  const cards = ws.querySelector('.cards');
+  if(!cards) return;
+  const existing = [...cards.querySelectorAll('button.module-card')].find(b => (b.textContent || '').includes('TEMA 32'));
+  if(existing){
+    existing.disabled = false;
+    existing.innerHTML = `<span class="module-number">TEMA 32</span><h3>${esc((topics[32]||{}).title||'TEMA 32')}</h3><p>${topic32Curated.length} preguntas · radiología pediátrica</p><span class="module-action">Entrenar →</span>`;
+    existing.onclick = () => session('TEMA 32', topic32Curated);
+    return;
+  }
+  const button = document.createElement('button');
+  button.className = 'module-card';
+  button.type = 'button';
+  button.innerHTML = `<span class="module-number">TEMA 32</span><h3>${esc((topics[32]||{}).title||'TEMA 32')}</h3><p>${topic32Curated.length} preguntas · radiología pediátrica</p><span class="module-action">Entrenar →</span>`;
+  button.onclick = () => session('TEMA 32', topic32Curated);
+  const before = [...cards.querySelectorAll('button.module-card')].find(b => { const m=(b.textContent||'').match(/TEMA\s+(\d+)/); return m && Number(m[1]) > 32; });
+  if(before) cards.insertBefore(button,before); else cards.appendChild(button);
+};
