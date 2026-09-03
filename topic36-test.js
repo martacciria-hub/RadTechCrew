@@ -1,0 +1,62 @@
+// Test curado del TEMA 36 · CALIDAD DE IMAGEN, PREPARACIÓN DEL PACIENTE Y SEMIOLOGÍA ECOGRÁFICA
+const topic36Curated = [
+  ["¿Qué se entiende por artefacto ecográfico?", ["Una estructura anatómica de pequeño tamaño", "Una parte de la imagen que no representa realmente la estructura anatómica presente", "Una alteración exclusiva del Doppler", "Un defecto producido únicamente por mala preparación del paciente"], 1, "TEMA 36", "fácil"],
+  ["¿Cuál de las siguientes NO es una posible consecuencia de un artefacto?", ["Hacer aparecer estructuras inexistentes", "Hacer desaparecer estructuras reales", "Alterar forma, tamaño o brillo de estructuras reales", "Garantizar una interpretación diagnóstica más precisa"], 3, "TEMA 36", "fácil"],
+  ["¿Por qué es importante que el ecografista conozca los artefactos?", ["Para evitar diagnósticos erróneos y no confundir una afección real con un artefacto", "Para eliminar físicamente todos los ecos", "Para sustituir la preparación del paciente", "Para evitar el uso del Doppler"], 0, "TEMA 36", "medio"],
+  ["Antes de cada exploración, ¿qué actuación corresponde a la preparación de la sala?", ["Mantenerla sin limpiar entre pacientes", "Asegurar privacidad, accesibilidad y condiciones adecuadas de limpieza", "Evitar preparar la camilla", "Impedir el acceso del paciente hasta finalizar la exploración"], 1, "TEMA 36", "fácil"],
+  ["Respecto al equipo ecográfico, ¿qué actuación forma parte de la preparación?", ["Limpiar los transductores y comprobar la identificación del paciente", "Aplicar gel al transductor antes de comprobar al paciente", "Usar siempre el mismo transductor", "Desactivar la identificación del paciente"], 0, "TEMA 36", "fácil"],
+  ["¿Cuál de las siguientes actuaciones corresponde al paciente antes de la exploración?", ["Informarle claramente, confirmar sus datos, indicar posición y área a descubrir y aplicar gel", "Indicar únicamente que permanezca inmóvil", "Aplicar gel sin explicar el procedimiento", "Seleccionar él mismo el transductor"], 0, "TEMA 36", "medio"],
+  ["¿Cuál de los siguientes principios físicos asumidos por el sistema puede incumplirse y generar artefactos?", ["Que la velocidad del sonido sea idéntica en todos los tejidos", "Que todos los tejidos sean anecogénicos", "Que no exista reflexión", "Que el sonido se propague en el vacío"], 0, "TEMA 36", "medio"],
+  ["El artefacto de ancho del haz es también denominado:", ["Artefacto de grosor de corte o efecto de volumen parcial", "Artefacto de desplazamiento de velocidad", "Artefacto de espejo", "Artefacto de centelleo"], 0, "TEMA 36", "medio"],
+  ["El artefacto de ancho del haz puede producirse cuando:", ["Un objeto muy reflectante fuera de la zona estrecha del haz se representa sobre una estructura adyacente", "El flujo supera la escala Doppler", "El sonido encuentra una superficie paralela y rebota dos veces", "La velocidad del sonido es exactamente 1540 m/s"], 0, "TEMA 36", "difícil"],
+  ["¿Cómo se reconoce típicamente la reverberación?", ["Como múltiples líneas paralelas y equidistantes entre sí", "Como una única banda brillante posterior", "Como una duplicación profunda equidistante a una interfase", "Como un mosaico de color dentro de un vaso"], 0, "TEMA 36", "medio"],
+  ["La reverberación se produce cuando:", ["Dos superficies altamente reflectantes paralelas permiten rebotes repetidos del eco", "Una estructura atenúa poco el sonido", "El tejido se mueve durante el Doppler", "El flujo supera la escala disponible"], 0, "TEMA 36", "fácil"],
+  ["¿Qué diferencia fundamental a la cola de cometa de una reverberación convencional?", ["Las superficies reflectantes están muy próximas y los ecos secuenciales se perciben como una señal continua o afilada", "Solo aparece en Doppler potencia", "Se debe exclusivamente a la baja velocidad del sonido", "Siempre produce una sombra acústica"], 0, "TEMA 36", "difícil"],
+  ["El artefacto ring-down se relaciona con:", ["La vibración de líquido atrapado entre burbujas de aire que genera una onda continua", "La extensión del color fuera del vaso", "La duplicación especular de una estructura", "La absorción completa del haz por el hueso"], 0, "TEMA 36", "difícil"],
+  ["¿Cómo se representa habitualmente el ring-down?", ["Como una línea que se extiende por detrás del gas", "Como una banda negra detrás de una litiasis", "Como múltiples líneas equidistantes", "Como un mosaico de color"], 0, "TEMA 36", "medio"],
+  ["El artefacto especular o en espejo se produce cuando:", ["Un reflector plano potente, no paralelo al transductor, provoca que el escáner sitúe el eco en una posición errónea", "Dos superficies paralelas generan ecos equidistantes", "Una estructura atenúa intensamente el haz", "El flujo supera la escala disponible"], 0, "TEMA 36", "difícil"],
+  ["¿Cómo suele reconocerse el artefacto especular?", ["Como una estructura virtual duplicada en profundidad y equidistante de la interfase reflectiva", "Como una banda brillante detrás de una estructura líquida", "Como una señal color aleatoria", "Como una sombra estrecha posterior"], 0, "TEMA 36", "difícil"],
+  ["En el desplazamiento de velocidad, si el sonido atraviesa un área de grasa a una velocidad menor que la asumida por el sistema, la imagen puede aparecer:", ["Más profunda de lo que realmente está", "Más superficial de lo que realmente está", "Siempre hiperecogénica", "Sin ningún eco"], 0, "TEMA 36", "medio"],
+  ["¿Qué valor de velocidad del sonido asume el sistema como referencia en los tejidos?", ["154 m/s", "1540 m/s", "15400 m/s", "15,4 m/s"], 1, "TEMA 36", "fácil"],
+  ["La sombra acústica aparece cuando:", ["El haz encuentra un material que lo atenúa más que el tejido adyacente", "El haz atraviesa una estructura de baja atenuación", "El flujo es demasiado rápido", "El tejido se mueve con la respiración"], 0, "TEMA 36", "fácil"],
+  ["¿Cuál es la apariencia típica de una sombra acústica?", ["Una banda oscura posterior al área altamente atenuante", "Una banda brillante posterior a una estructura de baja atenuación", "Una duplicación de la estructura", "Una línea continua detrás del gas"], 0, "TEMA 36", "fácil"],
+  ["El incremento de la transmisión se produce cuando:", ["Una estructura focal débilmente atenuante permite que detrás de ella la amplitud del haz sea mayor que en el resto del campo a igual profundidad", "Una estructura atenúa intensamente el haz", "El flujo supera la escala Doppler", "El sonido rebota entre dos superficies"], 0, "TEMA 36", "difícil"],
+  ["¿Cómo se representa el incremento de la transmisión?", ["Como una banda brillante que se extiende desde un objeto de baja atenuación", "Como una banda negra detrás de una calcificación", "Como líneas paralelas equidistantes", "Como una señal color aleatoria"], 0, "TEMA 36", "medio"],
+  ["El ruido estructurado puede aparecer como:", ["Un patrón de líneas paralelas o destellos producido por interferencias eléctricas", "Una duplicación profunda de una estructura", "Una banda brillante posterior por baja atenuación", "Un mosaico de color exclusivamente vascular"], 0, "TEMA 36", "medio"],
+  ["El aliasing en Doppler color tiene lugar cuando:", ["El rango de velocidad excede la escala disponible para representarlo", "La señal procede de un líquido que no es sangre", "El color se extiende por una ganancia demasiado alta", "El transductor se mueve ligeramente"], 0, "TEMA 36", "fácil"],
+  ["¿Cuál de las siguientes medidas puede ayudar a corregir el aliasing?", ["Incrementar la frecuencia de repetición de pulsos", "Reducir siempre la frecuencia de repetición de pulsos", "Eliminar la línea base", "Aumentar siempre la ganancia hasta saturar la imagen"], 0, "TEMA 36", "medio"],
+  ["¿Por qué el Doppler potencia no presenta aliasing?", ["Porque no tiene componente direccional o de velocidad", "Porque no utiliza ultrasonidos", "Porque siempre trabaja con velocidades nulas", "Porque solo representa estructuras estáticas"], 0, "TEMA 36", "difícil"],
+  ["El blooming o color diluido se caracteriza por:", ["Extensión de la señal color fuera del vaso", "Una banda negra posterior a una litiasis", "Una estructura duplicada en profundidad", "Múltiples líneas paralelas equidistantes"], 0, "TEMA 36", "fácil"],
+  ["El blooming puede estar causado por:", ["Reverberación o parámetros de ganancia demasiado altos", "Únicamente una velocidad del sonido inferior a 1540 m/s", "La ausencia total de flujo", "Una estructura ósea exclusivamente"], 0, "TEMA 36", "medio"],
+  ["El seudoflujo se define como:", ["La presencia de flujo de un líquido que no es sangre", "La ausencia de flujo en un vaso permeable", "El movimiento de la pared vascular interpretado como una sombra", "Una señal producida exclusivamente por microburbujas"], 0, "TEMA 36", "medio"],
+  ["El artefacto flash consiste en:", ["Un estallido brusco y aleatorio de señal color que puede rellenar la imagen y ocultar el modo B", "Una banda brillante detrás de un quiste", "Una duplicación profunda de una estructura", "Una serie de ecos equidistantes"], 0, "TEMA 36", "fácil"],
+  ["¿Qué término indica que una estructura presenta la misma ecogenicidad que la estructura de referencia?", ["Isoecogénica", "Hiperecogénica", "Hipoecogénica", "Anecoica"], 0, "TEMA 36", "fácil"],
+  ["Una estructura hiperecogénica se representa habitualmente:", ["Más brillante que la estructura de referencia", "Más oscura que la referencia", "Completamente negra por ausencia de ecos", "Siempre acompañada de flujo Doppler"], 0, "TEMA 36", "fácil"],
+  ["Una estructura anecoica se caracteriza por:", ["No presentar ecogenicidad respecto a las estructuras que la rodean y verse negra", "Presentar mayor ecogenicidad que el fondo", "Presentar menor ecogenicidad pero con múltiples ecos brillantes", "Ser siempre una estructura calcificada"], 0, "TEMA 36", "fácil"],
+  ["¿Cuál de las siguientes asociaciones de ecoestructura es correcta?", ["Órgano hueco — mejor demostración cuando está relleno de líquido y distendido", "Hueso — ausencia de sombra acústica", "Parénquima sólido — siempre anecoico", "Estructura vascular — ausencia de movimiento del contenido"], 0, "TEMA 36", "medio"],
+  ["En la valoración de los contornos ecográficos se consideran, entre otras características:", ["Forma, nitidez y regularidad", "Solo frecuencia y período", "Únicamente velocidad y flujo", "Solo profundidad y ganancia"], 0, "TEMA 36", "fácil"]
+];
+
+window.topic36Curated = topic36Curated;
+
+const previousTopicMenu36 = window.topicMenu;
+window.topicMenu = function(){
+  previousTopicMenu36();
+  if(!ws || ws.hidden) return;
+  const cards = ws.querySelector('.cards');
+  if(!cards) return;
+  const existing = [...cards.querySelectorAll('button.module-card')].find(b => (b.textContent || '').includes('TEMA 36'));
+  if(existing){
+    existing.disabled = false;
+    existing.innerHTML = `<span class="module-number">TEMA 36</span><h3>${esc((topics[36]||{}).title||'TEMA 36')}</h3><p>${topic36Curated.length} preguntas · calidad de imagen y semiología</p><span class="module-action">Entrenar →</span>`;
+    existing.onclick = () => session('TEMA 36', topic36Curated);
+    return;
+  }
+  const button = document.createElement('button');
+  button.className = 'module-card';
+  button.type = 'button';
+  button.innerHTML = `<span class="module-number">TEMA 36</span><h3>${esc((topics[36]||{}).title||'TEMA 36')}</h3><p>${topic36Curated.length} preguntas · calidad de imagen y semiología</p><span class="module-action">Entrenar →</span>`;
+  button.onclick = () => session('TEMA 36', topic36Curated);
+  const before = [...cards.querySelectorAll('button.module-card')].find(b => { const m=(b.textContent||'').match(/TEMA\s+(\d+)/); return m && Number(m[1]) > 36; });
+  if(before) cards.insertBefore(button,before); else cards.appendChild(button);
+};
