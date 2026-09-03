@@ -36,6 +36,7 @@ const topic24Curated = [
   {q:'¿Cuál de las siguientes asociaciones de parámetros técnicos es INCORRECTA?',a:['Lateral cervical: 65 kVp, 32 mAs, DFP 150 cm','Oblicua cervical: 75 kVp, 25 mAs, DFP 150 cm','Lateral dorsal: 80 kVp, 50 mAs, DFP 1 m','AP sacro: 70 kVp, 20 mAs, DFP 150 cm'],c:3}
 ];
 window.topic24Curated = topic24Curated;
+const topic24Session = topic24Curated.map(x=>[x.q,x.a,x.c,'TEMA 24','medio']);
 const previousTopicMenu24 = window.topicMenu;
 window.topicMenu = function(){
   previousTopicMenu24();
@@ -46,7 +47,7 @@ window.topicMenu = function(){
   const setCard = b => {
     b.disabled=false;
     b.innerHTML=`<span class="module-number">TEMA 24</span><h3>${esc((topics[24]||{}).title||'TEMA 24')}</h3><p>${topic24Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
-    b.onclick=()=>session('TEMA 24',topic24Curated);
+    b.onclick=()=>session('TEMA 24',topic24Session);
   };
   if(existing){ setCard(existing); return; }
   const button=document.createElement('button');
