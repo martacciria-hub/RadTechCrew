@@ -23,7 +23,7 @@
 
   function prepare(q){
     const opts=shuffle(q[1].map((text,i)=>({text,i})));
-    return [q[0],opts.map(x=>x.text),opts.findIndex(x=>x.i===q[2]),q[3],q[4]];
+    return [q[0],opts.map(x=>x.text),opts.findIndex(x=>x.i===q[2]),q[3],q[4],q[5]||''];
   }
 
   function record(q,correct){
@@ -41,9 +41,12 @@
   function session(title,items){
     const qs=shuffle(items).map(prepare);
     let pos=0,score=0;
+    const mistakes=[];
+    window.lastTestMistakes=[];
     ws.hidden=false;
     const render=()=>{
       if(pos>=qs.length){
+        window.lastTestMistakes=mistakes.slice();
         ws.innerHTML=`<div class="study-material final-panel"><p class="eyebrow">${esc(title).toUpperCase()}</p><h2>🏆 Sesión terminada</h2><div class="final-score">${score} / ${qs.length}</div><p class="final-percent">${Math.round(score/qs.length*100)}% de aciertos</p><button class="secondary-button final-again" id="again">Repetir</button></div>`;
         document.getElementById('again').onclick=()=>session(title,items);
         return;
@@ -59,6 +62,7 @@
         });
         const ok=chosen===q[2];
         if(ok)score++;
+        if(!ok)mistakes.push({q:q[0],w:q[1][chosen],c:q[1][q[2]],t:q[3],explanation:q[5]||''});
         record(q,ok);
         setTimeout(()=>{pos++;render()},450);
       });
