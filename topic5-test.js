@@ -34,3 +34,4 @@ const topic5Curated=[
 ['¿Qué medida ayuda a reducir la borrosidad producida por el movimiento?',['Inmovilizar la zona y utilizar tiempos de exposición cortos','Aumentar el tiempo de exposición','Alejar el objeto del receptor','Aumentar el volumen irradiado'],0,'TEMA 5','fácil'],
 ['¿Qué combinación resume mejor las condiciones geométricas recomendadas para obtener una imagen exacta?',['Colimar adecuadamente, maximizar la distancia foco-objeto, mantener el tubo paralelo al receptor y evitar el movimiento','Aumentar el campo, acercar el foco al objeto y prolongar la exposición','Alejar el receptor del objeto y aumentar el tiempo de exposición','Reducir la distancia foco-objeto y aumentar la inclinación del tubo'],0,'TEMA 5','difícil']
 ];
+window.topic5Curated = topic5Curated;
