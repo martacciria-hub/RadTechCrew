@@ -40,24 +40,4 @@ const topic8Curated = [
   ['¿Qué afirmación compara correctamente CR, DX y DDC?', ['CR requiere leer un soporte previamente expuesto; DX integra captura y lectura; DDC se basa en un sistema con centelleador, panel CCD y conversión A/D','CR y DX requieren siempre un lector externo; DDC utiliza únicamente selenio amorfo','DX necesita un soporte CR; CR utiliza un panel CCD; DDC utiliza únicamente película','Los tres sistemas utilizan exactamente el mismo proceso de captura'], 0, 'TEMA 8', 'difícil'],
   ['¿Cuál es la secuencia más coherente desde la exposición hasta la imagen diagnóstica en un sistema CR?', ['Exposición del soporte → lectura láser → recogida de luz → conversión A/D → procesado digital','Exposición → conversión directa en carga por selenio → centelleador → procesado','Exposición → revelado químico → fotomultiplicador → conversión A/D','Exposición → transmisión inalámbrica → borrado con luz blanca → lectura láser'], 0, 'TEMA 8', 'difícil']
 ];
-
-// Sustituye únicamente la tarjeta del TEMA 8 que ya genera el sistema.
-const topic8OriginalTopicMenu = topicMenu;
-topicMenu = function(){
-  topic8OriginalTopicMenu();
-  if(!ws || ws.hidden) return;
-  const cards = ws.querySelector('.cards');
-  if(!cards) return;
-  const buttons = [...cards.querySelectorAll('button.module-card')];
-  const existing = buttons.find(btn => (btn.textContent || '').includes('TEMA 8'));
-  if(existing){
-    existing.onclick = () => session('TEMA 8', topic8Curated);
-    return;
-  }
-  const button = document.createElement('button');
-  button.className = 'module-card';
-  button.type = 'button';
-  button.innerHTML = `<span class="module-number">TEMA 8</span><h3>${esc((topics[8]||{}).title||'TEMA 8')}</h3><p>${topic8Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
-  button.onclick = () => session('TEMA 8', topic8Curated);
-  cards.appendChild(button);
-};
+window.topic8Curated = topic8Curated;
