@@ -1,5 +1,5 @@
 // Banco específico del Tema 4 · integrado en el sistema estándar de tests.
-// Solo contiene preguntas; la lógica de selección pertenece a tests-bank.js.
+// Solo contiene preguntas; la lógica de selección pertenece a tests-engine.js.
 const topic4Curated = [
   ['¿Qué función principal cumplen las pantallas intensificadoras en la radiología convencional?',['Convertir la energía de los rayos X en luz visible para impresionar la película','Convertir la luz visible en rayos X','Aumentar la energía de los rayos X antes de llegar al paciente','Eliminar toda la radiación dispersa'],0,'TEMA 4','fácil'],
   ['¿Qué material constituye principalmente la emulsión de una película radiográfica?',['Gelatina y cristales de halogenuro de plata','Poliéster y plomo','Oxisulfuro de gadolinio y aluminio','Dióxido de titanio y magnesio'],0,'TEMA 4','fácil'],
@@ -27,3 +27,4 @@ const topic4Curated = [
   ['¿Qué ventaja principal aporta el intensificador de imagen en fluoroscopia?',['Permite obtener una imagen visible de mayor intensidad y reducir la dosis necesaria respecto a la fluoroscopia convencional','Elimina completamente la radiación dispersa','Permite trabajar siempre sin colimación','Sustituye al tubo de rayos X'],0,'TEMA 4','fácil'],
   ['¿Qué ocurre al utilizar la magnificación electrónica del intensificador de imagen?',['Mejora la resolución y el contraste, pero puede aumentar la dosis al paciente','Reduce siempre la dosis y no modifica la imagen','Empeora necesariamente el contraste y reduce la dosis a cero','No produce ningún cambio en la imagen'],0,'TEMA 4','medio']
 ];
+window.topic4Curated = topic4Curated;
