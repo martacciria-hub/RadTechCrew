@@ -1,0 +1,28 @@
+// Banco curado del TEMA 2 · estructura atómica, radiación y sus interacciones.
+const topic2Curated = [
+['¿Qué partículas forman el núcleo de un átomo?',['Protones y neutrones','Electrones y protones','Electrones y neutrones','Fotones y electrones'],0,'TEMA 2','fácil'],
+['¿Qué partícula subatómica tiene carga eléctrica negativa?',['Electrón','Protón','Neutrón','Fotón'],0,'TEMA 2','fácil'],
+['¿Qué representa el número atómico (Z) de un elemento?',['El número de protones de su núcleo','El número de neutrones de su núcleo','El número total de electrones y neutrones','La masa total del átomo'],0,'TEMA 2','fácil'],
+['¿Qué ocurre con la energía de ligadura de los electrones al acercarse al núcleo?',['Aumenta','Disminuye','Permanece siempre constante','Desaparece'],0,'TEMA 2','medio'],
+['¿Qué ocurre cuando un electrón de un átomo pasa a una capa de mayor energía?',['Debe absorber energía','Debe emitir energía','Se convierte en un protón','Pierde su carga eléctrica'],0,'TEMA 2','fácil'],
+['¿Qué ocurre durante la desexcitación de un átomo?',['Se libera energía','Se absorbe energía obligatoriamente','El átomo pierde todos sus electrones','El núcleo se desintegra'],0,'TEMA 2','fácil'],
+['¿Cuándo se produce la ionización de un átomo?',['Cuando la energía aportada supera la energía de ligadura del electrón y este es arrancado','Cuando un electrón pasa a una capa superior sin absorber energía','Cuando el núcleo emite un neutrón','Cuando un átomo absorbe únicamente luz visible'],0,'TEMA 2','medio'],
+['¿Cuál es una característica de la radiación electromagnética?',['Se propaga transportando energía mediante campos eléctricos y magnéticos','Necesita siempre un medio material para propagarse','Tiene masa en reposo','Su velocidad depende del medio incluso en el vacío'],0,'TEMA 2','fácil'],
+['¿Qué fenómeno produce radiación electromagnética por la desaceleración de una partícula cargada?',['Radiación de frenado','Efecto fotoeléctrico','Producción de pares','Dispersión coherente'],0,'TEMA 2','medio'],
+['¿Cómo se denomina también a la radiación de frenado?',['Bremsstrahlung o free-free radiation','Efecto Compton','Radiación característica','Radiación gamma'],0,'TEMA 2','medio'],
+['¿Qué sucede con los rayos X al atravesar la materia?',['Se atenúan progresivamente por interacción con ella','Mantienen siempre su intensidad inicial','Aumentan su energía','Se transforman todos en rayos gamma'],0,'TEMA 2','fácil'],
+['¿Con qué tipo de estructura interactúan preferentemente los rayos X de baja energía?',['Átomos enteros','Núcleos exclusivamente','Electrones libres exclusivamente','Moléculas de agua exclusivamente'],0,'TEMA 2','medio'],
+['¿Qué ocurre en la dispersión coherente o Thomson?',['El fotón se desvía y se reemite prácticamente con la misma energía','El fotón es absorbido y expulsa un electrón interno','Se crea un par electrón-positrón','El núcleo expulsa un nucleón'],0,'TEMA 2','medio'],
+['¿Qué característica define al efecto Compton?',['El fotón interacciona con un electrón externo, pierde parte de su energía y cambia de dirección','El fotón es absorbido por completo por el átomo sin ionización','El fotón se transforma en un electrón y un positrón','El fotón se desvía sin modificar su energía'],0,'TEMA 2','medio'],
+['¿Qué sucede en el efecto fotoeléctrico?',['El fotón es absorbido y expulsa un electrón de una capa interna','El fotón se dispersa conservando toda su energía','Se produce exclusivamente radiación de frenado','Se crea un neutrón y un protón'],0,'TEMA 2','fácil'],
+['¿Qué energía mínima se requiere para la producción de pares electrón-positrón?',['1,02 MeV','102 keV','10,2 MeV','100 keV'],0,'TEMA 2','difícil'],
+['¿Qué sucede en la producción de pares?',['Un fotón de alta energía se materializa en un electrón y un positrón cerca del núcleo','Un electrón externo se transforma en un protón','Un fotón se dispersa sin perder energía','El núcleo absorbe un neutrón y emite un electrón'],0,'TEMA 2','medio'],
+['¿Qué interacción implica que el fotón incidente desaparezca por absorción?',['Efecto fotoeléctrico','Dispersión coherente','Efecto Compton','Dispersión Thomson'],0,'TEMA 2','fácil'],
+['Según la ley del inverso del cuadrado de la distancia, ¿qué ocurre con la intensidad de la radiación si se duplica la distancia al foco?',['Se reduce a la cuarta parte','Se reduce a la mitad','Se duplica','Se mantiene igual'],0,'TEMA 2','fácil'],
+['¿Qué efecto produce un aumento del número atómico (Z) del material atravesado por los rayos X, manteniendo constantes los demás factores?',['Aumenta la atenuación','Disminuye la atenuación','No modifica la atenuación','Elimina la radiación dispersa'],0,'TEMA 2','medio'],
+['¿Qué combinación favorece una mayor penetración de los rayos X?',['Mayor energía y menor atenuación','Menor energía y mayor atenuación','Mayor número atómico y menor energía','Mayor densidad y menor energía'],0,'TEMA 2','medio'],
+['¿Cuál de las siguientes es una propiedad de los rayos X?',['Son radiación electromagnética ionizante, sin masa ni carga','Tienen masa y carga negativa','Son partículas materiales con carga positiva','No transportan energía'],0,'TEMA 2','fácil'],
+['¿Qué relación existe entre la energía y la longitud de onda de la radiación electromagnética?',['A mayor energía, menor longitud de onda','A mayor energía, mayor longitud de onda','No existe relación','Ambas aumentan siempre de forma proporcional'],0,'TEMA 2','medio'],
+['¿Qué interacción es especialmente relevante en radiodiagnóstico por su contribución a la formación de la imagen?',['Efecto fotoeléctrico','Producción de pares','Desintegración radiactiva','Emisión alfa'],0,'TEMA 2','medio']
+];
+window.topic2Curated = topic2Curated;
