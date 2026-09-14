@@ -1,4 +1,4 @@
-const topic25Curated = [
+const topic25CuratedRaw = [
   {q:'En una radiografía convencional de tórax, la proyección considerada estándar es:',a:['AP en decúbito','PA en bipedestación','Lateral en decúbito','Oblicua en bipedestación'],c:1},
   {q:'¿Cuál es una de las principales ventajas de la PA de tórax frente a la AP?',a:['Aumenta la magnificación cardíaca','Permite prescindir de la lateral','Reduce la magnificación de la silueta cardíaca','Se realiza exclusivamente en pacientes encamados'],c:2},
   {q:'En la proyección lateral de tórax, habitualmente se coloca el lado izquierdo hacia el receptor porque:',a:['Disminuye la magnificación del corazón','Permite visualizar mejor el esternón','Aumenta la magnificación de los pulmones','Evita siempre la superposición de las clavículas'],c:0},
@@ -40,23 +40,5 @@ const topic25Curated = [
   {q:'Una lesión redondeada localizada en el parénquima pulmonar se denomina:',a:['Derrame pleural','Nódulo pulmonar','Neumotórax','Seno costofrénico'],c:1},
   {q:'En una pregunta de examen, se relacionan cuatro elementos. ¿Cuál es la relación correcta?',a:['Mediastino → espacio entre pulmones; pleura visceral → pulmón; PA → estándar; lordótica → ápices','Mediastino → cavidad pleural; pleura visceral → pared; PA → encamado; lordótica → esternón','Mediastino → abdomen; pleura visceral → diafragma; PA → neumotórax; lordótica → corazón','Mediastino → pulmón derecho; pleura visceral → costillas; PA → lateral; lordótica → derrame'],c:0}
 ];
+const topic25Curated = topic25CuratedRaw.map(x=>[x.q,x.a,x.c,'TEMA 25','medio']);
 window.topic25Curated = topic25Curated;
-const topic25Session = topic25Curated.map(x=>[x.q,x.a,x.c,'TEMA 25','medio']);
-const previousTopicMenu25 = window.topicMenu;
-window.topicMenu = function(){
-  previousTopicMenu25();
-  if(!ws || ws.hidden) return;
-  const cards = ws.querySelector('.cards');
-  if(!cards) return;
-  const existing = [...cards.querySelectorAll('button.module-card')].find(b=>(b.textContent||'').includes('TEMA 25'));
-  const setCard = b => {
-    b.disabled=false;
-    b.innerHTML=`<span class="module-number">TEMA 25</span><h3>${esc((topics[25]||{}).title||'TEMA 25')}</h3><p>${topic25Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
-    b.onclick=()=>session('TEMA 25',topic25Session);
-  };
-  if(existing){ setCard(existing); return; }
-  const button=document.createElement('button');
-  button.className='module-card'; button.type='button'; setCard(button);
-  const before=[...cards.querySelectorAll('button.module-card')].find(b=>{const m=(b.textContent||'').match(/TEMA\s+(\d+)/);return m&&Number(m[1])>25;});
-  if(before) cards.insertBefore(button,before); else cards.appendChild(button);
-};
