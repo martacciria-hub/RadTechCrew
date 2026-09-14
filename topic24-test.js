@@ -1,4 +1,4 @@
-const topic24Curated = [
+const topic24CuratedRaw = [
   {q:'En una proyección AP de columna cervical, ¿hasta qué nivel se describe la visualización de los cuerpos vertebrales, espacios discales, espacios interpediculares y apófisis?',a:['Desde C1 hasta C7','Desde C3 hasta T2-T3','Desde C2 hasta T1','Desde C4 hasta T4'],c:1},
   {q:'Para realizar correctamente la proyección AP de Ottonello, el paciente debe:',a:['Mantener la boca cerrada y realizar una inspiración profunda','Rotar la cabeza mientras abre la boca','Abrir y cerrar la boca sin mover la cabeza','Flexionar el cuello durante la exposición'],c:2},
   {q:'¿Cuál de las siguientes asociaciones corresponde a la proyección lateral cervical?',a:['C1-C7 + cuerpos vertebrales, discos, apófisis espinosas y articulaciones cigoapofisarias','C3-T2 + únicamente cuerpos vertebrales','C7-T1 + articulaciones costovertebrales','C1-C2 + articulaciones sacroilíacas'],c:0},
@@ -35,23 +35,5 @@ const topic24Curated = [
   {q:'¿Qué asociación entre proyección y parámetros técnicos es correcta?',a:['AP cervical: 60 kVp, 25 mAs, DFP 1 m','AP dorsal: 60 kVp, 20 mAs, DFP 1 m','Oblicua lumbar: 60 kVp, 20 mAs, DFP 1 m','Escoliosis: 70 kVp, 20 mAs, DFP 1 m'],c:0},
   {q:'¿Cuál de las siguientes asociaciones de parámetros técnicos es INCORRECTA?',a:['Lateral cervical: 65 kVp, 32 mAs, DFP 150 cm','Oblicua cervical: 75 kVp, 25 mAs, DFP 150 cm','Lateral dorsal: 80 kVp, 50 mAs, DFP 1 m','AP sacro: 70 kVp, 20 mAs, DFP 150 cm'],c:3}
 ];
+const topic24Curated = topic24CuratedRaw.map(x=>[x.q,x.a,x.c,'TEMA 24','medio']);
 window.topic24Curated = topic24Curated;
-const topic24Session = topic24Curated.map(x=>[x.q,x.a,x.c,'TEMA 24','medio']);
-const previousTopicMenu24 = window.topicMenu;
-window.topicMenu = function(){
-  previousTopicMenu24();
-  if(!ws || ws.hidden) return;
-  const cards = ws.querySelector('.cards');
-  if(!cards) return;
-  const existing = [...cards.querySelectorAll('button.module-card')].find(b=>(b.textContent||'').includes('TEMA 24'));
-  const setCard = b => {
-    b.disabled=false;
-    b.innerHTML=`<span class="module-number">TEMA 24</span><h3>${esc((topics[24]||{}).title||'TEMA 24')}</h3><p>${topic24Curated.length} preguntas disponibles</p><span class="module-action">Entrenar →</span>`;
-    b.onclick=()=>session('TEMA 24',topic24Session);
-  };
-  if(existing){ setCard(existing); return; }
-  const button=document.createElement('button');
-  button.className='module-card'; button.type='button'; setCard(button);
-  const before=[...cards.querySelectorAll('button.module-card')].find(b=>{const m=(b.textContent||'').match(/TEMA\s+(\d+)/);return m&&Number(m[1])>24;});
-  if(before) cards.insertBefore(button,before); else cards.appendChild(button);
-};
