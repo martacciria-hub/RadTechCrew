@@ -1,4 +1,4 @@
-const topic23Curated = [
+const topic23CuratedRaw = [
   {q:'Ante un traumatismo craneal, ¿cuál constituye una de las principales indicaciones de la radiografía convencional de cráneo?',a:['Estudio muscular','Evaluación de las estructuras óseas','Estudio vascular','Evaluación digestiva'],c:1},
   {q:'¿Qué combinación corresponde a las proyecciones básicas de cráneo descritas en el tema?',a:['Oblicua y axial','PA y lateral','AP y oblicua','Tangencial y lateral'],c:1},
   {q:'Se solicita una proyección para valorar específicamente la silla turca. ¿Cuál es la elección más adecuada?',a:['Caldwell','Waters','Lateral de cráneo','Hirtz'],c:2},
@@ -35,4 +35,5 @@ const topic23Curated = [
   {q:'¿Cuál de las siguientes relaciones entre proyección y objetivo es CORRECTA?',a:['Hirtz → base del cráneo y agujero magno','Towne → senos paranasales','Waters → silla turca','Mahoney → ATM'],c:0},
   {q:'Un paciente necesita una exploración convencional de cráneo y se quiere seleccionar la proyección en función de la estructura de interés. ¿Cuál de las siguientes secuencias es completamente correcta?',a:['Silla turca → lateral / occipital → Towne / senos paranasales → Waters','Silla turca → Waters / occipital → Schüller / senos → Towne','Silla turca → Hirtz / occipital → Caldwell / senos → Mahoney','Silla turca → Towne / occipital → lateral / senos → Hirtz'],c:0}
 ];
+const topic23Curated = topic23CuratedRaw.map(x=>[x.q,x.a,x.c,'TEMA 23','medio']);
 window.topic23Curated = topic23Curated;
