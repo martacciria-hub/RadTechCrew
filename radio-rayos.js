@@ -13,7 +13,7 @@ const radioModules = [
 ];
 
 const radioPodcasts = {
-  2: [
+  1: [
     {
       topic: 'Tema 2',
       title: 'La batalla cuántica de una radiografía',
