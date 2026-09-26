@@ -1,0 +1,25 @@
+.study-mode-chooser{margin:24px 0 22px;padding:22px;border:1px solid #d9edf0;border-radius:22px;background:linear-gradient(135deg,#f7fbfc,#f7f3ff)}
+.study-mode-intro h3{margin:6px 0 7px;color:#155e75;font-size:1.25rem}
+.study-mode-intro p:last-child{margin:0;color:#52616b;line-height:1.55}
+.study-mode-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.study-mode-card{appearance:none;border:1px solid #d9edf0;border-radius:18px;background:#fff;padding:20px;text-align:left;display:flex;flex-direction:column;gap:8px;color:#24313a;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.study-mode-card:hover,.study-mode-card:focus,.study-mode-card.active{transform:translateY(-2px);border-color:#0e7490;box-shadow:0 10px 24px #00000012;outline:none}
+.study-mode-card.active{background:#eef8fa}
+.study-mode-icon{font-size:2rem}
+.study-mode-card strong{font-size:1.08rem;color:#155e75}
+.study-mode-card span:not(.study-mode-icon){font-size:.9rem;line-height:1.45;color:#52616b}
+.study-mode-card em{font-style:normal;font-weight:800;color:#0e7490;margin-top:3px}
+#podcast-study{margin-top:24px}
+.podcast-area-head{margin-bottom:18px}
+.podcast-area-head h3{margin:6px 0;color:#155e75;font-size:1.45rem}
+.podcast-area-head p:last-child{margin:0;color:#52616b;line-height:1.55}
+.podcast-module{margin:18px 0 12px;padding:14px 16px;border-radius:15px;background:#f8fbfc;border:1px solid #e2e8f0}
+.podcast-module h4{margin:5px 0 0;color:#155e75}
+.podcast-card{display:flex;gap:16px;align-items:flex-start;padding:20px;border:1px solid #d9edf0;border-radius:20px;background:#fff;box-shadow:0 6px 24px #0000000a}
+.podcast-card-icon{width:54px;height:54px;flex:0 0 54px;display:grid;place-items:center;border-radius:16px;background:#eef8fa;font-size:1.6rem}
+.podcast-card-info{min-width:0;flex:1}
+.podcast-card-info h4{margin:6px 0;color:#155e75;font-size:1.05rem;line-height:1.4}
+.podcast-card-info p{margin:0 0 15px;color:#64748b;font-size:.86rem}
+.podcast-card audio{display:block;width:100%;max-width:620px}
+.podcast-back{margin-top:16px}
+@media(max-width:700px){.study-mode-cards{grid-template-columns:1fr}.study-mode-card{padding:18px}.podcast-card{padding:16px;gap:12px}.podcast-card-icon{width:46px;height:46px;flex-basis:46px;font-size:1.35rem}.podcast-card-info audio{width:100%}}
