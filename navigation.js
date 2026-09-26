@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     'radio-rayos':document.getElementById('radio-rayos')
   };
   const moduleView=document.getElementById('module-view');
+  const radioModuleView=document.getElementById('radio-module-view');
   const podcastView=document.getElementById('podcast-study');
   const navLinks=document.querySelectorAll('[data-view]');
 
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
 
     if(moduleView)moduleView.hidden=true;
+    if(radioModuleView)radioModuleView.hidden=true;
     if(podcastView)podcastView.hidden=true;
 
     navLinks.forEach(a=>a.classList.toggle('active',a.dataset.view===name));
