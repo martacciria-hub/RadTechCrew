@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded',()=>{
   const views={
     inicio:document.getElementById('inicio'),
-    perfil:document.getElementById('perfil'),
     estudio:document.getElementById('estudio'),
     'radio-rayos':document.getElementById('radio-rayos')
   };
