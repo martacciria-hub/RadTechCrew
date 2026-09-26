@@ -88,12 +88,14 @@
     };
 
     const enterWritten = () => {
+      podcastShell.hidden = true;
       showScreen('chooser');
       modules.hidden = false;
       if (moduleView) moduleView.hidden = true;
     };
 
     const enterPodcasts = () => {
+      podcastShell.hidden = false;
       modules.hidden = true;
       if (moduleView) moduleView.hidden = true;
       showScreen('podcasts');
@@ -113,6 +115,8 @@
       link.addEventListener('click', enterWritten);
     });
 
+    podcastShell.hidden = false;
+    modules.hidden = true;
     showScreen('chooser');
   }
 
