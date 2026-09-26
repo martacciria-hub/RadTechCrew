@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   const views={
     inicio:document.getElementById('inicio'),
     perfil:document.getElementById('perfil'),
-    estudio:document.getElementById('estudio')
+    estudio:document.getElementById('estudio'),
+    'radio-rayos':document.getElementById('radio-rayos')
   };
   const moduleView=document.getElementById('module-view');
   const podcastView=document.getElementById('podcast-study');
