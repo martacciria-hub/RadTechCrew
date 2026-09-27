@@ -25,6 +25,12 @@ const radioPodcasts = {
       title: 'La batalla cuántica de una radiografía',
       description: 'Podcast de estudio sobre el Tema 2.',
       audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/prova-podcast-tema2/La_batalla_cuantica_de_una_radiografia.m4a'
+    },
+    {
+      topic: 'Tema 3',
+      title: 'Ingeniería del tubo de rayos X',
+      description: 'Podcast de estudio sobre el Tema 3.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema3/Ingenieria_del_tubo_de_rayos_X.m4a'
     }
   ]
 };
