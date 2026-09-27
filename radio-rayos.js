@@ -44,6 +44,14 @@ const radioPodcasts = {
       description: 'Podcast de estudio sobre el Tema 5.',
       audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema5/La_fisica_y_quimica_tras_la_radiografia.m4a'
     }
+  ],
+  2: [
+    {
+      topic: 'Tema 6',
+      title: 'De la placa física al dato matemático',
+      description: 'Podcast de estudio sobre el Tema 6.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema6/De_la_placa_fisica_al_dato_matematico.m4a'
+    }
   ]
 };
 
