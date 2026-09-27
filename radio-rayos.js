@@ -75,6 +75,12 @@ const radioPodcasts = {
       title: 'El engranaje invisible tras una radiografía',
       description: 'Podcast de estudio sobre el Tema 10.',
       audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema10/El_engranaje_invisible_tras_una_radiografia.m4a'
+    },
+    {
+      topic: 'Tema 11',
+      title: 'El engranaje entre PACS y RIS',
+      description: 'Podcast de estudio sobre el Tema 11.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema11/El_engranaje_entre_PACS_y_RIS.m4a'
     }
   ],
   3: [
