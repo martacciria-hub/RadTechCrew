@@ -51,6 +51,12 @@ const radioPodcasts = {
       title: 'De la placa física al dato matemático',
       description: 'Podcast de estudio sobre el Tema 6.',
       audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema6/De_la_placa_fisica_al_dato_matematico.m4a'
+    },
+    {
+      topic: 'Tema 7',
+      title: 'Tema 7',
+      description: 'Podcast de estudio sobre el Tema 7.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema7/Tema_7.m4a'
     }
   ]
 };
