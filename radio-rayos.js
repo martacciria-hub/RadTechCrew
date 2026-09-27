@@ -31,6 +31,12 @@ const radioPodcasts = {
       title: 'Ingeniería del tubo de rayos X',
       description: 'Podcast de estudio sobre el Tema 3.',
       audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema3/Ingenieria_del_tubo_de_rayos_X.m4a'
+    },
+    {
+      topic: 'Tema 4',
+      title: 'Cómo se forma la imagen radiográfica',
+      description: 'Podcast de estudio sobre el Tema 4.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema4/Como_se_forma_la_imagen_radiografica.m4a'
     }
   ]
 };
