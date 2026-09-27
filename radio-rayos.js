@@ -57,6 +57,12 @@ const radioPodcasts = {
       title: 'Tema 7',
       description: 'Podcast de estudio sobre el Tema 7.',
       audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema7/Tema_7.m4a'
+    },
+    {
+      topic: 'Tema 8',
+      title: 'Tema 8',
+      description: 'Podcast de estudio sobre el Tema 8.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema8/Tema_8.m4a'
     }
   ]
 };
