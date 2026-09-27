@@ -70,6 +70,14 @@ const radioPodcasts = {
       description: 'Podcast de estudio sobre el Tema 9.',
       audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema9/Tema_9.m4a'
     }
+  ],
+  3: [
+    {
+      topic: 'Tema 10',
+      title: 'El engranaje invisible tras una radiografía',
+      description: 'Podcast de estudio sobre el Tema 10.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema10/El_engranaje_invisible_tras_una_radiografia.m4a'
+    }
   ]
 };
 
