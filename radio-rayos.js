@@ -15,6 +15,12 @@ const radioModules = [
 const radioPodcasts = {
   1: [
     {
+      topic: 'Tema 1',
+      title: 'De la mano de Röntgen al TAC',
+      description: 'Podcast de estudio sobre el Tema 1.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/prueba-tema1/De_la_mano_de_Rontgen_al_TAC.m4a'
+    },
+    {
       topic: 'Tema 2',
       title: 'La batalla cuántica de una radiografía',
       description: 'Podcast de estudio sobre el Tema 2.',
