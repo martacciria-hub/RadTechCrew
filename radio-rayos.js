@@ -37,6 +37,12 @@ const radioPodcasts = {
       title: 'Cómo se forma la imagen radiográfica',
       description: 'Podcast de estudio sobre el Tema 4.',
       audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema4/Como_se_forma_la_imagen_radiografica.m4a'
+    },
+    {
+      topic: 'Tema 5',
+      title: 'La física y química tras la radiografía',
+      description: 'Podcast de estudio sobre el Tema 5.',
+      audio: 'https://github.com/martacciria-hub/RadtechcrewTTS/releases/download/tema5/La_fisica_y_quimica_tras_la_radiografia.m4a'
     }
   ]
 };
